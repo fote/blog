@@ -1,0 +1,9 @@
+baseurl = "http://4te.me/"
+languageCode = "en-us"
+title = "/4te.me"
+theme = "purehugo"
+disqusShortname = "4te"
+
+[params]
+ subtitle = "Все можно решить bash-однострочником"
+ hideShareOptions = true
