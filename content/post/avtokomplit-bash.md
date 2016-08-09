@@ -1,7 +1,7 @@
 +++
 Categories = ["linux"]
 Description = "Некоторые советы при работе в bash"
-Tags = ["linux", "bash"]
+Tags = ["bash"]
 date = "2015-05-15 04:56:21 -0400"
 title = "Автокомплит для ssh"
 
