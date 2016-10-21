@@ -6,5 +6,5 @@ disqusShortname = "4te"
 googleAnalitycs = "UA-82262003-1"
 
 [params]
- subtitle = "Все можно решить bash-однострочником"
+ subtitle = "Любую проблему можно решить bash-однострочником"
  hideShareOptions = true

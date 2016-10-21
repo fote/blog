@@ -1,7 +1,7 @@
 +++
-Categories = ["linux","server"]
+Categories = ["linux"]
 Description = "How-to про расширение LVM раздела"
-Tags = ["lvm","linux"]
+Tags = ["lvm","linux","server"]
 date = "2016-08-09T12:56:02+03:00"
 title = "Как расширить LVM раздел"
 
