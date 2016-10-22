@@ -7,4 +7,6 @@ googleAnalitycs = "UA-82262003-1"
 
 [params]
  subtitle = "Любую проблему можно решить bash-однострочником"
+ description = "Блог про linux и окололинуксовые темы"
+ author = "Roman Orlov"
  hideShareOptions = true
