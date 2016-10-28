@@ -45,7 +45,7 @@ h3 {
 }
 
 .sidebar {
-    background: rgb(0, 0, 0);
+    background: #111;
     color: #fff;
     width: 18%;
 }
@@ -80,8 +80,22 @@ h3 {
     *display: inline;
     zoom: 1;
 }
+.tag {
+    font-size: .75em !important;
+    color: #444;
+    background-color: rgb(243, 248, 248);
+    border: 1px solid rgb(52, 192, 236);
+    padding: 3px 4px 3px 4px;
+    margin: 2px 2px 2px 0;
+    text-decoration: none;
+    font-size: 90%;
+    line-height: 2.4;
+    white-space: nowrap;
+}
+
 .nav-item-links {
     margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .nav-item-links a {
