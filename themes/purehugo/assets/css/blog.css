@@ -39,7 +39,7 @@ h3 {
 }
 
 .header {
-    text-align: left;
+    text-align: center;
     top: auto;
     margin: 3em auto;
 }
@@ -47,7 +47,6 @@ h3 {
 .sidebar {
     background: #111;
     color: #fff;
-    width: 18%;
 }
 
 .brand-title,
@@ -56,6 +55,7 @@ h3 {
 }
 .brand-title {
     font-family: monospace;
+    font-size: 2em;
 }
 .brand-title a{
     color:#fff;
@@ -73,7 +73,7 @@ h3 {
     padding: 0;
     list-style: none;
     font-family: monospace;
-    font-size: 120%;
+    font-size: 1.4em;
 }
 .nav-item {
     display: inline-block;
@@ -250,12 +250,13 @@ h3 {
     }
 
     .header {
-        margin: 28% 3em 0px;
+        margin: 22% 14% 0;
         text-align: left;
     }
 
     .sidebar {
         position: fixed;
+        color: #fff;
         top: 0;
         bottom: 0;
     }
