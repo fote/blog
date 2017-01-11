@@ -30,3 +30,13 @@ IP-адрес который она получит при первом резо�
 
 Здесь есть дополнительное описание этих опций -
 [https://docs.oracle.com/javase/7/docs/technotes/guides/net/properties.html#nct](https://docs.oracle.com/javase/7/docs/technotes/guides/net/properties.html#nct)
+
+Однако этого может быть недостаточно и адреса все еще будут застревать в кэше. В этом случае надо добавить эту же опцию в security параметры JVM. По умолчанию файл с security-настройками лежит в ```JRE_HOME/lib/security/java.security```, чтобы добавить к этим настройкам свои, надо запускать java-процесс с опцией:
+```
+-Djava.security.properties=/etc/java.security.options
+``` 
+
+В ```/etc/java.security.options``` прописываем ```networkaddress.cache.ttl=60s```
+
+Здесь есть статься с более подробным описанием настройки security - 
+[https://dzone.com/articles/how-override-java-security](https://dzone.com/articles/how-override-java-security)
