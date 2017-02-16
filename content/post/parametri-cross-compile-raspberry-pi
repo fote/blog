@@ -13,7 +13,7 @@ title = "Параметры кросс-компиляции Golang для Raspbe
 
 <!--more-->
 
-Для разных версий Raspberry Pi нужно указывать разные версии ARM. Узнать какой именно нужно можно в ```/proc/cpuinfo````:
+Для разных версий Raspberry Pi нужно указывать разные версии ARM. Узнать какой именно нужно можно в ```/proc/cpuinfo```:
 ```
 Processor	: ARMv6-compatible processor rev 7 (v6l)
 BogoMIPS	: 697.95
