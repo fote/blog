@@ -55,7 +55,7 @@ h3 {
 }
 .brand-title {
     font-family: monospace;
-    font-size: 2em;
+    font-size: 3em;
 }
 .brand-title a{
     color:#fff;
@@ -73,7 +73,7 @@ h3 {
     padding: 0;
     list-style: none;
     font-family: monospace;
-    font-size: 1.4em;
+    font-size: 1.7em;
 }
 .nav-item {
     display: inline-block;
