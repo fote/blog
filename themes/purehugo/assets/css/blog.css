@@ -12,7 +12,7 @@ specific font stacks to ensure the greatest OS/browser compatibility.
 html, button, input, select, textarea,
 .pure-g [class *= "pure-u"] {
     /* Set your content font stack here: */
-    font-family: "Source Sans Pro", serif;
+    font-family: "Roboto", serif;
 }
 
 a {
@@ -141,7 +141,7 @@ h3 {
     font-size: 2em;
     color: #222;
     margin: 0.4em 0;
-    font-family: "Oxygen", sans-serif;
+    font-family: "Verdana";
     font-weight: bold;
 }
 .post-title:hover{
@@ -153,13 +153,14 @@ h3 {
     margin-left: 1em;
 }
 .post-description {
-    font-family: "Source Sans Pro", serif;
+    font-family: "Roboto", "HelveticaNeue", Helvetica, Arial, sans-serif;
     color: #333;
     line-height: 1.35em;
 }
 .post-meta {
     color: #999;
     font-size: 90%;
+    font-family: "HelveticaNeue"
     margin: 5px 0;
 }
 
