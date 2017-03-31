@@ -153,9 +153,10 @@ h3 {
     margin-left: 1em;
 }
 .post-description {
-    font-family: "Roboto", "HelveticaNeue", Helvetica, Arial, sans-serif;
-    color: #333;
-    line-height: 1.35em;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: Verdana,sans-serif;
+    line-height: 160%;
 }
 .post-meta {
     color: #999;
