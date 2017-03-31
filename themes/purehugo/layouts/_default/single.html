@@ -17,10 +17,16 @@
                             {{ with .Params.author }}
                                 By <strong class="post-author">{{ . }}</strong>
                             {{ end }}
-                            {{ if isset .Params "categories" }}
+                            {{ if isset .Params "tags" }}
                                  
                                 {{ $baseUrl := .Site.BaseURL }}
-                                {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+                            
+                                <span class="taglist">
+                                 {{ range .Params.tags }}
+                                   <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+                                 {{ end }}
+                                 </span> 
+        
                             {{ end }}
                         </p>
                     </header>
