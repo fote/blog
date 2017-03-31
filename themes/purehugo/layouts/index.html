@@ -22,7 +22,11 @@
                             {{ if isset .Params "categories" }}
 
                                 {{ $baseUrl := .Site.BaseURL }}
-                                {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+                                <span class="taglist">
+                                 {{ range .Params.tags }}
+                                   <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+                                 {{ end }}
+                                 </span> 
                             {{ end }}
                         </p>
                     </header>
