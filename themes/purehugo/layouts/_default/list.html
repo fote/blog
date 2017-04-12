@@ -8,17 +8,16 @@
             <!-- A wrapper for all the blog posts -->
 
             <main id="content">
-            {{ $paginator := .Paginator }}
+
             	<h1 class="post-title">{{ .Title }}</h1>
-                {{ range $index, $page := .Paginator.Pages }}
+                {{ range $index, $page := .Pages }}
                     {{ .Render "li" }}
                 {{ end }}
 
-                {{ partial "pagination.html" $paginator }}
             </main>
 
             
-            {{ partial "pagination.html" . }}
+ 
             {{ partial "footer.html" . }}
         </div>
     </div>

@@ -4,6 +4,8 @@ title = "/4te.me"
 theme = "purehugo"
 disqusShortname = "4te"
 googleAnalitycs = "UA-82262003-1"
+Paginate = 10
+
 
 [params]
  subtitle = "Любую проблему можно решить bash-однострочником"
