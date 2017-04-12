@@ -24,7 +24,7 @@
                                 {{ $baseUrl := .Site.BaseURL }}
                                 <span class="taglist">
                                  {{ range .Params.tags }}
-                                   <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+                                   <a href="/tags/{{ . | urlize }}/">{{ . }}</a>
                                  {{ end }}
                                  </span> 
                             {{ end }}
