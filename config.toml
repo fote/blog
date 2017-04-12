@@ -4,7 +4,7 @@ title = "/4te.me"
 theme = "purehugo"
 disqusShortname = "4te"
 googleAnalitycs = "UA-82262003-1"
-Paginate = 10
+Paginate = 20
 
 
 [params]
