@@ -1,0 +1,27 @@
+{{ partial "header.html" . }}
+
+<div id="layout" class="pure-g">
+    {{ partial "sidebar.html" . }}
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+            <!-- A wrapper for all the blog posts -->
+
+            <main id="content">
+
+            	<h1 class="post-title">{{ .Title }}</h1>
+                {{ range $index, $page := .Pages }}
+                    {{ .Render "li" }}
+                {{ end }}
+
+            </main>
+
+            
+ 
+            {{ partial "footer.html" . }}
+        </div>
+    </div>
+</div>
+{{ partial "analytics.html" . }}
+</body>
+</html>
