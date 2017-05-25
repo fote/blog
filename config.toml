@@ -6,6 +6,8 @@ disqusShortname = "4te"
 googleAnalitycs = "UA-82262003-1"
 Paginate = 20
 
+pygmentsstyle = "default"
+pygmentsuseclasses = true
 
 [params]
  subtitle = "Любую проблему можно решить bash-однострочником"

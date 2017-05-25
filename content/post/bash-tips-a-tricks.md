@@ -11,45 +11,45 @@ title = "Полезные советы bash"
 <!--more-->
 <br />
 Вставить аргумент из предыдущей команды (в терминале работает сочетание клавиш *Alt + .*; очень удобная штука) :
-```bash
-!$
-```
+{{< highlight console >}}
+# !$
+{{< /highlight >}}
 
 Запустить последнюю команду, например, если при выполнении команды не хватило прав и нужно добавить *sudo*, то чтобы не печатать команду заново удобно пользоваться:
-```bash
-sudo !!
-```
+{{< highlight console >}}
+# sudo !!
+{{< /highlight >}}
 
 
 Проверить открыт ли порт без telnet/nc:
-```bash
-echo >/dev/tcp/8.8.8.8/53 && echo "open"
-```
+{{< highlight console >}}
+# echo >/dev/tcp/8.8.8.8/53 && echo "open"
+{{< /highlight >}}
 
 Выполнить команды из файла в текущем шелле:
-```bash
-source /etc/profile.d/rvm
-```
+{{< highlight console >}}
+# source /etc/profile.d/rvm
+{{< /highlight >}}
 
 Подсктрока из переменной(первые 5 символов):
-```bash
-${my_variable:0:5}
-```
+{{< highlight console >}}
+# ${my_variable:0:5}
+{{< /highlight >}}
 
 Создать несколько папок:
-```bash
-mkdir -p /tmp/{folder1,folder2,folder3}
-```
+{{< highlight console >}}
+# mkdir -p /tmp/{folder1,folder2,folder3}
+{{< /highlight >}}
 
 Посмотреть дерево процессов (с форками):
-```bash
-ps axwef
-```
+{{< highlight console >}}
+# ps axwef
+{{< /highlight >}}
 
  Проверить скорость записи диска. Данная команда пишет 512 МБ на диск и потом показывает скорость. Важным ключом является *conv=fdatasync*. Она заставляет dd сделать sync и убедится что все данные действительно записаны на диск. Если не использовать этот ключ, то dd будет писать в память и бенчмарк получится неверный:
-```bash
-dd if=/dev/zero of=/tmp/speedtest bs=1M count=512 conv=fdatasync; rm -f /tmp/speedtest
-```
+{{< highlight console >}}
+# dd if=/dev/zero of=/tmp/speedtest bs=1M count=512 conv=fdatasync; rm -f /tmp/speedtest
+{{< /highlight >}}
 Примерные значения скорости диска:
 
  - на обычных дисках (VMWare VM) - **~60 MB/sec - 150 MB/sec** (в зависимости от RAID-level)
@@ -58,9 +58,9 @@ dd if=/dev/zero of=/tmp/speedtest bs=1M count=512 conv=fdatasync; rm -f /tmp/spe
 
 
 Скорость чтения с диска:
-```bash
-hdparm -Tt /dev/sda
-```
+{{< highlight console >}}
+# hdparm -Tt /dev/sda
+{{< /highlight >}}
 Примерные значения:
 
  - обычные диски (VMware VM): cached read = **5200-6000 MB/sec**; buffered disk read = **100-350 MB/sec**
@@ -69,46 +69,46 @@ hdparm -Tt /dev/sda
 <br />
 
 Разархивировать в новую директорию:
-```bash
-tar zxvf archive.tar.gz -C new_dir
-```
+{{< highlight console >}}
+# tar zxvf archive.tar.gz -C new_dir
+{{< /highlight >}}
 
 Быстро создать бэкап файла:
-```bash
-cp nginx.conf{,.bak}
-```
+{{< highlight console >}}
+# cp nginx.conf{,.bak}
+{{< /highlight >}}
 
 Доступ на расшареный ресурс Windows. После авторизации доступна команда *ls*. Чтобы скачать файл - *get somefilename.jpg*:
-```bash
-smbclient -U "DOMAIN\user" //192.168.1.1/shared
-```
+{{< highlight console >}}
+# smbclient -U "DOMAIN\user" //192.168.1.1/shared
+{{< /highlight >}}
 
 Unzip в директорию:
-```bash
-unzip package.zip -d some_dir
-```
+{{< highlight console >}}
+# unzip package.zip -d some_dir
+{{< /highlight >}}
 
 Переодически запускать команду и показывать вывод (по умолчанию раз в 2 секунды, менять интервал ключом *-n*):
-```bash
-watch ps aux
-```
+{{< highlight console >}}
+# watch ps aux
+{{< /highlight >}}
 
 Создать RAM-диск:
-```bash
-mount -t tmpfs tmpfs /tmpram -o size=512m
-```
+{{< highlight console >}}
+# mount -t tmpfs tmpfs /tmpram -o size=512m
+{{< /highlight >}}
 
 Конвертация табуляций в пробелы:
-```bash
-expand tabsfile.txt > spacefile.txt
-```
+{{< highlight console >}}
+# expand tabsfile.txt > spacefile.txt
+{{< /highlight >}}
 
 Вернуться в предыдущую директорию:
-```bash
-cd -
-```
+{{< highlight console >}}
+# cd -
+{{< /highlight >}}
 
 Когда *Ctrl + c* не работает:
-```bash
+{{< highlight console >}}
 Ctrl + \
-```
+{{< /highlight >}}

@@ -13,18 +13,18 @@ title = "Как сгенерировать CSR заявку на получен�
 <!--more-->
 
 Генерация ключа с паролем:
-```bash
- openssl genrsa -des3 -out private.key 2048
-```
+{{< highlight console >}}
+# openssl genrsa -des3 -out private.key 2048
+{{< /highlight >}}
 
 Генерация ключа БЕЗ пароля:
-```bash
-openssl genrsa -out private.key 2048
-```
+{{< highlight console >}}
+# openssl genrsa -out private.key 2048
+{{< /highlight >}}
 
 Теперь на основе ключа генерим CSR:
-```bash
-openssl req -new -key private.key -out request.csr
-```
+{{< highlight console >}}
+# openssl req -new -key private.key -out request.csr
+{{< /highlight >}}
 
 После указания параметров (страна, организация, домен и проч.) появится файл с CSR. Он отправляется провайдеру SSL для получения сертификата.

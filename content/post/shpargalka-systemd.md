@@ -17,83 +17,83 @@ Unit - это базовый термин systemd, он обозначает р�
 ## systemctl
 
 Список всех юнитов:
-```
-systemctl
-```
+{{< highlight console >}}
+# systemctl
+{{< /highlight >}}
 
 Информация о статусе юнита:
-```
-systemctl status nginx
-```
+{{< highlight console >}}
+# systemctl status nginx
+{{< /highlight >}}
 
 Релоад конфигурации демона:
-```
-systemctl reload nginx
-```
+{{< highlight console >}}
+# systemctl reload nginx
+{{< /highlight >}}
 
 Запустить/остановить юнит:
-```
-systemctl [start|stop] nginx
-```
+{{< highlight console >}}
+# systemctl [start|stop] nginx
+{{< /highlight >}}
 
 Включить/выключить автозапуск юнита при загрузке системы:
-```
-systemctl [enable|disable] nginx
-```
+{{< highlight console >}}
+# systemctl [enable|disable] nginx
+{{< /highlight >}}
 
 Список юнитов которые не запустились во время последней загрузки системы:
-```
-systemctl --failed
-```
+{{< highlight console >}}
+# systemctl --failed
+{{< /highlight >}}
 
 ## journalctl
 
 journald - пишет логи юнитов, запущенных systemd, в бинарном формате. По умолчанию в ubuntu 16.04 лежат в ```/run/log/journal/<machine-id>```. machine-id - уникальный id-сервера, генерируется случайным образом. В 16.04 логи также пишутся с помощью rsyslogd, то есть они также достуны по старинке в ```/var/log```
 
 Все логи всех юнитов с момента последней загрузки:
-```
-journalctl
-```
+{{< highlight console >}}
+# journalctl
+{{< /highlight >}}
 
 Лог последней загрузки:
-```
-journalctl -b
-```
+{{< highlight console >}}
+# journalctl -b
+{{< /highlight >}}
 
 Список послдених загрузок системы:
-```
-journalctl --list-boots
-```
+{{< highlight console >}}
+# journalctl --list-boots
+{{< /highlight >}}
 
 Лог определенной загрузки (boot-id - см. предыдущую команду):
-```
-journalctl -b <boot-id>
-```
+{{< highlight console >}}
+# journalctl -b <boot-id>
+{{< /highlight >}}
 
 Логи определенного юнита:
-```
-journalctl -u nginx
-```
+{{< highlight console >}}
+# journalctl -u nginx
+{{< /highlight >}}
 
 Следить (tail -f) за логом определенного юнита:
-```
-journalctl -f -u nginx
-```
+{{< highlight console >}}
+# journalctl -f -u nginx
+{{< /highlight >}}
 
 Посмотреть сколько занимают логи на диске:
-```
-journalctl --disk-usage
-```
+{{< highlight console >}}
+# journalctl --disk-usage
+{{< /highlight >}}
 
 Ограничить объем хранимых логов (journald сам занимается ротацией) можно по размеру:
-```
-journalctl --vacuum-size=1G
-```
+{{< highlight console >}}
+# journalctl --vacuum-size=1G
+{{< /highlight >}}
 
 Или по времени:
-```
-journalctl --vacuum-time=1week
-```
+{{< highlight console >}}
+# journalctl --vacuum-time=1week
+{{< /highlight >}}
 
 
 

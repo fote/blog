@@ -14,7 +14,8 @@ title = "Параметры кросс-компиляции Golang для Raspbe
 <!--more-->
 
 Для разных версий Raspberry Pi нужно указывать разные версии ARM. Узнать какой именно нужно можно в ```/proc/cpuinfo```:
-```
+{{< highlight console >}}
+# cat /proc/cpuinfo
 Processor	: ARMv6-compatible processor rev 7 (v6l)
 BogoMIPS	: 697.95
 Features	: swp half thumb fastmult vfp edsp java tls
@@ -27,10 +28,10 @@ CPU revision	: 7
 Hardware	: BCM2708
 Revision	: 000f
 Serial		: 00000000aa0b36f1
-```
+{{< /highlight >}}
 
 В данном случае процессор ARM версии 6. И параметры компиляции будут такие:
-```
-GOOS=linux GOARCH=arm GOARM=6 go build
-```
+{{< highlight console >}}
+# GOOS=linux GOARCH=arm GOARM=6 go build
+{{< /highlight >}}
 

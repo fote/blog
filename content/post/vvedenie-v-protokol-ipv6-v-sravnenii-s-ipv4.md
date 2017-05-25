@@ -61,11 +61,11 @@ draft = false
 Когда мы хотим узнать MAC-адрес какого-то IP-адреса, то с нашего link-local адреса посылаем ICMPv6 пакет типа Neighbor Solicitation (NS) на специальную multicast-группу (SNMA), адрес этой группы связан с искомым IP-адресом, в итоге этот пакет получит только хост с искомым адресом. На это он отвечает пакетом Neighbor Advertisement (NA) на наш link-local адрес &ndash; "это я, вот мой MAC".
 
 Посмотреть список MAC-адресов в linux можно командой:
-```
+{{< highlight console >}}
 # ip -6 neigh show
 2a03:b0c0:0:1010::1 dev eth0 lladdr 00:00:5e:00:02:96 router STALE
 fe80::1 dev eth0 lladdr 00:00:5e:00:02:96 router STALE
-```
+{{< /highlight >}}
 Это аналог команды ```arp -n``` &ndash; он показывает кэш MAC-адресов в локальной сети. У них есть несколько состояний, вот граф возможных переходов с сайта technet:
 
 ![Возможные состояния IPv6 адресов](/img/ipv6_state.gif)
