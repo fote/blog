@@ -1,4 +1,4 @@
-{{ partial "header.html" . }}
+    {{ partial "header.html" . }}
 
 <div id="layout" class="pure-g">
     {{ partial "sidebar.html" . }}
@@ -26,7 +26,7 @@
                                    <a href="/tags/{{ . | urlize }}/">{{ . }}</a>
                                  {{ end }}
                                  </span> 
-        
+
                             {{ end }}
                         </p>
                     </header>
@@ -42,9 +42,35 @@
 
                         </div>
                     </div>
+
                     {{ end }}
                     <div class="post-description">
+                        <img src="{{ .Params.Banner }}" />
                         {{ .Content }}
+                    </div>
+                    <div class="suggest ">
+                    <h3>Смотрите также:</h3>
+                    <div class="pure-g">
+                    {{/* Get a list of this section's other pages. "RegularPages" excludes the list page    */}}
+                    {{ $currentSection := (where .Site.RegularPages "Section" .Section) }}
+                    
+                    {{/* Get the number of entries of  $currentSection and subtract 1 */}}
+                    {{ $i := sub ($currentSection | len) 1 }}
+                    
+                    {{/* So we can only show this menu if there are one or more other entries  */}}
+                    {{ if ge $i 1 }}
+                         {{ range first 4 $currentSection }}
+                         <div class="one-suggest pure-u-1 pure-u-md-1-2">
+                        
+                                    <img src={{ .Params.Banner }} class="suggest-pic" />
+                                    <h4 class="one-suggest-title"><a href= {{ .URL }}>{{ .Title }}</a></h4>
+                                    <p class="suggest-date">{{ .Date.Format "02 Jan 2006" }}</p>
+                          
+                         </div>
+                          {{ end }}
+                    {{ end }}
+
+                    </div>
                     </div>
                     {{ template "_internal/disqus.html" . }}
                 </section>

@@ -4,9 +4,8 @@ Description = "Как написать telegram бота на golang. Прост
 Tags = ["golang"]
 date = "2017-05-25T21:05:17+03:00"
 title = "Как написать Telegram бота на Golang"
-
+Banner = "/img/telegram_bot_golang.png"
 +++
-![Telegram bot Golang](/img/telegram_bot_golang.png)
 
 Telegram - очень удобный мессенджер и у него есть отличный инструмент, который можно использовать в своих самых разных целях - боты. Bot - это аккаунт в телеграме, который управляется программой, а не человеком.
 

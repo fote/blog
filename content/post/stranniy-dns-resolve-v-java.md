@@ -4,7 +4,7 @@ Description = "Вечное кэширование у java-резолвера"
 Tags = ["java","linux","server"]
 date = "2016-11-30T19:55:29+03:00"
 title = "Вечный кэш у DNS резолвера в Java"
-
+Banner = "/img/terminal.jpg"
 +++
 
 Как известно, чтобы обеспечить кросс-платформенность у JVM свой DNS-резолвер,

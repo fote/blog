@@ -4,8 +4,9 @@ Description = "Некоторые советы при работе в bash"
 Tags = ["bash"]
 date = "2015-05-15 04:56:21 -0400"
 title = "Автокомплит из know_hosts для ssh"
-
+Banner = "/img/terminal.jpg"
 +++
+
 
 Чтобы после ssh автоматом по нажатию [TAB][TAB] подставлялись хосты из know_hosts:
 

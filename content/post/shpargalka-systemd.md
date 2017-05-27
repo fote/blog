@@ -4,11 +4,9 @@ Description = "Основные команды systemctl jounralctl. Про syst
 Tags = ["server","linux","systemd"]
 date = "2017-04-10T18:35:14+03:00"
 title = "Самая краткая шпаргалка systemd на примере Ubuntu 16.04"
-
+Banner = "/img/systemctl_status_nginx.png"
 +++
 С версии 16.04 Ubuntu включает в себя systemd как init-систему по умолчанию. На systemd также перешли Debian, CentOS и другие популярные linux-дистрибутивы. Это краткая шпаргалка по командам systemctl и jounrnalctl
-
-![systemctl status nginx](/img/systemctl_status_nginx.png)
 
 <!--more-->
 
