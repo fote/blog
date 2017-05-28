@@ -45,12 +45,12 @@
 
                     {{ end }}
                     <div class="post-description">
-                        <img src="{{ .Params.Banner }}" />
+                        <img src="{{ .Params.Banner }}" class="suggest-pic" />
                         {{ .Content }}
-                    </div>
-                    <div class="suggest ">
+                    
+                   </div>
                     <h3>Смотрите также:</h3>
-                    <div class="pure-g">
+    
                     {{/* Get a list of this section's other pages. "RegularPages" excludes the list page    */}}
                     {{ $currentSection := (where .Site.RegularPages "Section" .Section) }}
                     
@@ -69,9 +69,7 @@
                          </div>
                           {{ end }}
                     {{ end }}
-
-                    </div>
-                    </div>
+                  
                     {{ template "_internal/disqus.html" . }}
                 </section>
             </div>

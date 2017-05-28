@@ -377,7 +377,8 @@ h3 {
     margin-left: 1em;
 }
 .post-description {
-    overflow: hidden;
+    overflow: visible;
+        border-bottom: 1px solid #ccc;
     font-size: 14px;
     font-family: Verdana,sans-serif;
     line-height: 160%;
@@ -530,8 +531,9 @@ h3.post-title {
     margin-bottom: 50px;
 }
 .suggest-pic {
-  width: 300px;
-  height: 106px;
+    width:100% !important;
+    height:100% !important;
+    display:block;
 }
 
 .suggest-date {
@@ -542,11 +544,10 @@ h3.post-title {
 }
 
 .one-suggest {
-    width: 50%;
-    height: 180px;
+    width: 40%;
     float: left;
-    margin: 0 0 20px 0;
-    padding: 0;
+    margin: 10px;
+    padding: 10px;
     position: relative;
 }
 .one-suggest-title {
