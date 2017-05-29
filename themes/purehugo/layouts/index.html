@@ -32,7 +32,7 @@
                     </header>
 
                     <div class="post-description">
-                    <img src="{{ .Params.Banner }}" class="suggest-pic" />
+                    <a href="{{ .RelPermalink }}"><img src="{{ .Params.Banner }}" class="suggest-pic" /></a>
                         {{ .Summary }}
                     </div>
                     {{ if .Truncated }}
