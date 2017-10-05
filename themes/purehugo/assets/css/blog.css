@@ -378,7 +378,7 @@ h3 {
 }
 .post-description {
     overflow: visible;
-    border-bottom: 1px solid #ccc;
+
     font-size: 15px;
     font-family: Verdana,sans-serif;
     line-height: 160%;
@@ -531,8 +531,8 @@ h3.post-title {
     margin-bottom: 50px;
 }
 .suggest-pic {
-    width:100% !important;
-    height:100% !important;
+    width: 80% !important;
+    height: 70% !important;
     display:block;
 }
 
@@ -558,4 +558,15 @@ h3.post-title {
 
 .posts {
   max-width: 850px;
+}
+
+.project {
+  border: 1px solid #cccccc;
+    border-radius: 4px;
+    margin-bottom:30px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+.project-descrpition {
+      padding-left: 10px;
+    padding-top: 5px;
 }

@@ -9,8 +9,32 @@ Paginate = 20
 pygmentsstyle = "default"
 pygmentsuseclasses = true
 
+[related]
+
+# Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.
+threshold = 10
+
+# To get stable "See also" sections we, by default, exclude newer related pages.
+includeNewer = true
+
+# Will lower case keywords in both queries and in the indexes.
+toLower = true
+
+[[related.indices]]
+name  = "tags"
+weight = 10
+[[related.indices]]
+name  = "date"
+weight = 50
+pattern = "2006"
+
+
 [params]
  subtitle = "Любую проблему можно решить bash-однострочником"
  description = "Блог про linux и окололинуксовые темы"
  author = "Roman Orlov"
  hideShareOptions = true
+
+
+
+
