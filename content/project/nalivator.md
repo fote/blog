@@ -3,7 +3,7 @@ Banner = "/img/nalivator.png"
 Categories = ["project"]
 Description = "Робот-бармен на Raspberry Pi и Golang"
 Tags = ["golang","raspberrypi"]
-date = "2017-09-25T16:49:06+03:00"
+date = "2017-10-05T15:49:06+03:00"
 title = "Робот-бармен NALIVATOR-9000"
 
 +++
