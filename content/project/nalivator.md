@@ -12,7 +12,10 @@ title = "Робот-бармен NALIVATOR-9000"
 Пару лет назад я наткнулся на проект <a href="https://www.kickstarter.com/projects/partyrobotics/bartendro-a-cocktail-dispensing-robot">Bartendro</a> на Kickstarter. Мне понравилась идея, и я решил, что идеальное применение для моего недавно приобретенного Raspberry Pi найдено.
 <!--more-->
 
-Я прикинул какие детали понадобятся, и приступил к DIY реализации робота-бармена. Кратко расскажу что из этого получилось.
+Я прикинул какие детали понадобятся, и приступил к DIY реализации робота-бармена. Вот что в итоге получилось:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8zgrqq7ezRE" frameborder="0" allowfullscreen></iframe>
+
 
 <h2>Hardware</h2>
 Основной элемент всей конструкции, конечно - насосы. В оригинальном проекте Bartendro используются перистальтические насосы собственной разработки (кстати, весь проект доступен в <a href="https://github.com/partyrobotics/bartendro">github</a>).
@@ -118,11 +121,7 @@ $ GOOS=linux GOARCH=arm GOARM=6 go build
 <h2>Заключение</h2>
 Тестирование Наливатора прошло успешно - тестировщики остались довольны и оставили много фичереквестов.
 
-Напоследок видео работы:
-
 За ваше здоровье!
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8zgrqq7ezRE" frameborder="0" allowfullscreen></iframe>
 
 Оригинал:
 https://habrahabr.ru/post/327220/
