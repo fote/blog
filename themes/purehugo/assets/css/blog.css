@@ -383,6 +383,12 @@ h3 {
     font-family: Verdana,sans-serif;
     line-height: 160%;
 }
+
+.post-description img {
+    max-width: 80% !important;
+    max-height: 70% !important;
+    display: block;
+}
 .post-meta {
     color: #999;
     font-size: 90%;
