@@ -53,7 +53,7 @@ GPIO пины здесь нужно напаять вручную, вот так
 
 Можно воспользоваться утилитой [Win32diskimager](https://sourceforge.net/projects/win32diskimager/) или любой похожей - [Rufus](https://rufus.akeo.ie/), [Universal USB Creator](https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/).
 
-![Win32DiskImager](http://dailylinuxuser.com/wp-content/uploads/2015/11/win32diskimager1.png)
+![Win32DiskImager](/img/win32diskimager1.png)
 
 ### ***Mac OS***
 
