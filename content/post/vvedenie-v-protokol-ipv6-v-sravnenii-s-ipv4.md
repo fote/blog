@@ -58,7 +58,10 @@ Banner = "/img/ipv6.png"
 ## ARP в IPv6
 
 В IPv4, чтобы узнать канальный адрес соседа использовался протокол ARP, в IPv6 его нет, вместо него есть Neighbor Discovery Protocol (NDP). 
-Когда мы хотим узнать MAC-адрес какого-то IP-адреса, то с нашего link-local адреса посылаем ICMPv6 пакет типа Neighbor Solicitation (NS) на специальную multicast-группу [SNMA](https://en.wikipedia.org/wiki/Solicited-node_multicast_address), адрес этой группы связан с искомым IP-адресом, в итоге этот пакет получит только хост с искомым адресом. На NS искомый хост отвечает пакетом Neighbor Advertisement (NA) на наш link-local адрес &ndash; "это я, вот мой MAC".
+Когда мы хотим узнать MAC-адрес какого-то IP-адреса, то с нашего link-local адреса посылаем ICMPv6 пакет типа Neighbor Solicitation (NS) на специальную multicast-группу [SNMA](https://en.wikipedia.org/wiki/Solicited-node_multicast_address), адрес этой группы связан с искомым IP-адресом, в итоге этот пакет получит только хост с искомым адресом. На NS искомый хост отвечает пакетом Neighbor Advertisement (NA) на наш link-local адрес &ndash; "это я, вот мой MAC". Вот так это выглядит в wireshark:
+
+![Neighbor Solicitation и Neighbor Advertisement в Wireshark](/img/ipv6_snma_NS_NA.png)
+
 
 Посмотреть список MAC-адресов в linux можно командой:
 {{< highlight console >}}
