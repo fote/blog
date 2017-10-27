@@ -58,7 +58,7 @@ Banner = "/img/ipv6.png"
 ## ARP в IPv6
 
 В IPv4, чтобы узнать канальный адрес соседа использовался протокол ARP, в IPv6 его нет, вместо него есть Neighbor Discovery Protocol (NDP). 
-Когда мы хотим узнать MAC-адрес какого-то IP-адреса, то с нашего link-local адреса посылаем ICMPv6 пакет типа Neighbor Solicitation (NS) на специальную multicast-группу (SNMA), адрес этой группы связан с искомым IP-адресом, в итоге этот пакет получит только хост с искомым адресом. На это он отвечает пакетом Neighbor Advertisement (NA) на наш link-local адрес &ndash; "это я, вот мой MAC".
+Когда мы хотим узнать MAC-адрес какого-то IP-адреса, то с нашего link-local адреса посылаем ICMPv6 пакет типа Neighbor Solicitation (NS) на специальную multicast-группу [SNMA](https://en.wikipedia.org/wiki/Solicited-node_multicast_address), адрес этой группы связан с искомым IP-адресом, в итоге этот пакет получит только хост с искомым адресом. На NS искомый хост отвечает пакетом Neighbor Advertisement (NA) на наш link-local адрес &ndash; "это я, вот мой MAC".
 
 Посмотреть список MAC-адресов в linux можно командой:
 {{< highlight console >}}
@@ -69,6 +69,20 @@ fe80::1 dev eth0 lladdr 00:00:5e:00:02:96 router STALE
 Это аналог команды ```arp -n``` &ndash; он показывает кэш MAC-адресов в локальной сети. У них есть несколько состояний, вот граф возможных переходов с сайта technet:
 
 ![Возможные состояния IPv6 адресов](/img/ipv6_state.gif)
+
+Сбросить этот кэш можно так:
+{{< highlight console >}}
+# ip neigh flush dev eth0
+{{< /highlight >}}
+
+
+После этого все записи переходят в состояние FAILED и через несколько секунд удаляются:
+{{< highlight console >}}
+# ip -6 neigh show
+2001:db8:0:2::1 dev eth0  router FAILED
+fe80::85d:8fff:fe1b:7590 dev eth0  router FAILED
+{{< /highlight >}}
+
 
 Как я писал в самом начале &ndash; здесь приведена лишь минимально необходимая для понимания работы IPv6 информация. Тема эта огромная, и полное описание займет не одну книгу.
 
