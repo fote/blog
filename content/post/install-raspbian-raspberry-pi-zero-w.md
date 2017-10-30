@@ -34,12 +34,14 @@ Banner = "/img/rpi_zero_w_1.jpg"
 GPIO пины здесь нужно напаять вручную, вот так:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/97Or02ihJMo?start=300" frameborder="0" allowfullscreen></iframe>
 
-Пока что я их не паял, а решил провести первоначальную установку системы.
-
 Распиновка такая же как на моделях Raspberry Pi 2,3,Zero:
 
 ![Распиновка Raspberry Pi Zero W](/img/rpi_zero_w_6.png)
 
+[Здесь](https://pinout.xyz/) есть дополнительная информация по каждому пину.
+
+
+Пока что я их не паял, а решил провести первоначальную установку системы.
 
 ## Установка Raspbian
 
