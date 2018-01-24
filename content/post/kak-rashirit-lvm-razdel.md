@@ -44,7 +44,7 @@ Partition 1 does not end on cylinder boundary.
 
 Если разделы больше 2ТБ, то нужно использовать parted и размечать под GPT:
 {{< highlight console >}}
-parted -a optimal /dev/sdb
+# parted -a optimal /dev/sdb
 {{< /highlight >}}
 
 Если меньше 2ТБ, то можно размечать fdisk-ом. Создадим LVM раздел на этом диске с помощью fdisk:

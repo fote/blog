@@ -33,7 +33,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 Из них будет собрано зеркало и смонтировано в /mnt в качестве файлового хранилища.
 Если разделы больше 2ТБ, то нужно использовать parted и размечать под GPT:
 {{< highlight console >}}
-parted -a optimal /dev/sda
+# parted -a optimal /dev/sda
 {{< /highlight >}}
 
 Если меньше 2ТБ, то можно размечать fdisk-ом. Создадим разделы типа - ```fd - Linux raid auto```.
