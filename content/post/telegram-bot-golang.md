@@ -143,7 +143,7 @@ $ ./telegram-site-monitoring -telegrambottoken 3972____:____________03WRDsIU
 В данном случае chatid = -147193640  . Да, он может быть отрицательным.
 
 
-Теперь можно добавить функцию мониторинга в код. Здесь приведен не весь код. Полный код  у меня в github - https://github.com/fote/telegram-site-monitoring  :
+Теперь можно добавить функцию мониторинга в код. Здесь приведен не весь код. Полный код  у меня в github - [https://github.com/fote/telegram-site-monitoring](https://github.com/fote/telegram-site-monitoring):
 {{< highlight go >}}
 var (
 	// здесь храним список проверяемых сайтов и их код состояния
