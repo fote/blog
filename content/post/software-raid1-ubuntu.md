@@ -31,7 +31,12 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 {{< /highlight >}}
 
 Из них будет собрано зеркало и смонтировано в /mnt в качестве файлового хранилища.
-Для начала надо создать по разделу на каждом из дисков. Тип разделов - ```fd - Linux raid auto```:
+Если разделы больше 2ТБ, то нужно использовать parted и размечать под GPT:
+{{< highlight console >}}
+parted -a optimal /dev/sda
+{{< /highlight >}}
+
+Если меньше 2ТБ, то можно размечать fdisk-ом. Создадим разделы типа - ```fd - Linux raid auto```.
 {{< highlight console >}}
 # fdisk /dev/sdd
 
