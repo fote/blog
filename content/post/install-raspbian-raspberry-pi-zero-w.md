@@ -174,9 +174,9 @@ network={
 }     
 {{< /highlight >}}
 
-Рестартуем сеть:
+Рестартуем:
 {{< highlight console >}}
-$ sudo systemctl restart networking
+$ sudo reboot
 {{< /highlight >}}
 
 Вуаля! Интерфейс wlan0 получил IP-адрес от роутера и готов к работе:
