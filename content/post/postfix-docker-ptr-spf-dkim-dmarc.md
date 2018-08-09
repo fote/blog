@@ -161,7 +161,7 @@ DKIM приватный ключ (публичный в TXT записи), ко�
 Или по старинке через nc / telnet:
 {{< highlight console >}}
 # echo -ne '\0no-reply\0N0replyuserP@ssw0rd' | openssl enc -base64
-Cm8tcmVwbHkATjByZXBseXVzZXJQQHNzdzByZA==
+AG5vLXJlcGx5AE4wcmVwbHl1c2VyUEBzc3cwcmQ=
 
 
 # nc -v 127.0.0.1 25
@@ -170,7 +170,7 @@ Cm8tcmVwbHkATjByZXBseXVzZXJQQHNzdzByZA==
 ehlo localhost
 ...
 ...
-auth plain Cm8tcmVwbHkATjByZXBseXVzZXJQQHNzdzByZA==
+auth plain AG5vLXJlcGx5AE4wcmVwbHl1c2VyUEBzc3cwcmQ=
 235 2.7.0 Authentication successful
 
 mail from: no-reply@mydomain.ru
