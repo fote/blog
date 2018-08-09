@@ -160,7 +160,7 @@ DKIM приватный ключ (публичный в TXT записи), ко�
 
 Или по старинке через nc / telnet:
 {{< highlight console >}}
-# echo -ne '\no-reply\0N0replyuserP@ssw0rd' | openssl enc -base64
+# echo -ne '\0no-reply\0N0replyuserP@ssw0rd' | openssl enc -base64
 Cm8tcmVwbHkATjByZXBseXVzZXJQQHNzdzByZA==
 
 
