@@ -16,14 +16,14 @@ draft=true
 
 Для начала надо на компьютер установить adb и fastboot. Это утилитки из Android SDK для работы с подключенным по USB телефоном.
 
-Для Windows есть удобный установщик - https://forum.xda-developers.com/showthread.php?t=2317790
+Для Windows есть удобный установщик - https://forum.xda-developers.com/showthread.php?t=2588979
 Вот здесь официальные дистрибутивы под все платформы - https://developer.android.com/studio/#downloads
 
 Скачаем TWRP - это что-то типа livecd для телефона. Образ некой системы, в которой загрузится телефон и в нем мы установим приложение Magisk. 
 
 TWRP (я брал версию 3.1.0-0-twrp.img) - https://dl.twrp.me/twrp/
 
-Magisk - это open source приложение, которое дает рут права на телефон и позволяет скрывать наличие рута от других приложений, чтобы работал Android Pay. Также обновления системы, которые прилетают "по воздуху" не должны сломаться.
+Magisk - это open source android-приложение, которое дает рут права на телефон и позволяет скрывать наличие рута от других приложений, чтобы работал Android Pay. Также, обновления системы, которые прилетают "по воздуху", не должны сломаться.
 
 Magisk - https://github.com/topjohnwu/MagiskManager/releases
 
