@@ -3,7 +3,6 @@ languageCode = "en-us"
 title = "/4te.me"
 theme = "purehugo"
 disqusShortname = "4te"
-googleAnalitycs = "UA-82262003-1"
 Paginate = 20
 
 pygmentsstyle = "default"
