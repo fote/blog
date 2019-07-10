@@ -4,7 +4,7 @@ Description = ""
 Tags = [""]
 date = ""
 title = ""
-draft = True
+draft = "True"
 Banner = "/img/terminal.jpg"
 +++
 
