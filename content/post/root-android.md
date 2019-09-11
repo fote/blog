@@ -27,6 +27,8 @@ Banner = "/img/rootoneplus.jpg"
 
 **TWRP** (я брал версию 3.1.0-0-twrp.img) - https://dl.twrp.me/twrp/
 
+Если у вас OnePlus, вот TWRP для них - https://eu.dl.twrp.me/oneplus3/ (надо брать этот twrp если вылетает ошибка dtb not fount)
+
 Magisk - это open source приложение, которое дает рут права на телефон, и позволяет скрывать наличие рута от других приложений, чтобы работал Android Pay. Также, обновления системы, которые прилетают "по воздуху", не должны сломаться. Лучше использовать Magisk, а не SuperSU.
 
 **Magisk** - https://github.com/topjohnwu/Magisk/releases
