@@ -30,7 +30,7 @@ Banner = "/img/androidfixttl.jpg"
 ```
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\DefaultTTL
 ```
-типа REG_QWORD со значением 65 (в десятичной системе)
+типа REG_DWORD со значением 65 (в десятичной системе)
 
 
 ### **MacOS**
