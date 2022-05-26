@@ -49,21 +49,6 @@
                         {{ .Content }}
                     
                    </div>
-                   <hr />
-                    <h3>Смотрите также:</h3>
-                    <div class="pure-g">
-
-                         {{ range first 4 .Site.Pages }}
-                         <div class="pure-u-12-24">
-                        
-                                    <img src={{ .Params.Banner }} class="suggest-pic" />
-                                    <h4 class="one-suggest-title"><a href= {{ .URL }}>{{ .Title }}</a></h4>
-                                    <p class="suggest-date">{{ .Date.Format "02 Jan 2006" }}</p>
-                          
-                         </div>
-       
-                    {{ end }}
-                  </div>
                   <div>
                     {{ template "_internal/disqus.html" . }}
                   </div>
