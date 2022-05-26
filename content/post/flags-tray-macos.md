@@ -2,7 +2,7 @@
 Categories = ["desktop"]
 Description = "Как вернуть флаги в MacOS 12.4 Monteray"
 Tags = ["macos", "desktop"]
-date = "2020-05-28T01:55:42+03:00"
+date = "2020-05-28T01:44:42+03:00"
 title = "Возвращаем флаги раскладок клавиатуры в трей MacOS 12.4"
 Banner = "/img/flags-macos1.png"
 +++
