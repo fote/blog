@@ -30,7 +30,7 @@ VPN-сервер слушает на нестандартном для OpenVPN 1
 curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
 {{< /highlight >}}
 
-Для запуска OpenVPN мы будем использовать образ [https://hub.docker.com/r/kylemanna/openvpn](https://hub.docker.com/r/kylemanna/openvpn) 
+Для запуска OpenVPN мы будем использовать образ [kylemanna/openvpn](https://hub.docker.com/r/kylemanna/openvpn) 
 
 ## TL;DR
 
