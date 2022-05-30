@@ -4,7 +4,7 @@ title = "/4te.me"
 theme = "purehugo"
 disqusShortname = "4te"
 Paginate = 20
-
+enableemoji = true
 pygmentsstyle = "default"
 pygmentsuseclasses = true
 
