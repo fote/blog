@@ -36,9 +36,9 @@ curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
 
 Вот однострочник, который повторяет все следующие действия в инструкции. Его удобно скопировать в консоль, подставить свои значения, и тут же выполнить.
 
- * Папка с конфигом определяется в переменной configdir перед выполнением;
- * Заменить SERVERADDR на адрес своего сервера - IP или хостнейм (порт важно оставить как есть); 
- * Заменить CLIENTNAME на свое имя пользователя
+* Папка с конфигом определяется в переменной configdir перед выполнением;
+* Заменить SERVERADDR на адрес своего сервера - IP или хостнейм (порт важно оставить как есть); 
+* Заменить CLIENTNAME на свое имя пользователя
 
 {{< highlight console >}}
 export configdir=/etc/openvpn && mkdir $configdir && docker run -v $configdir:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://SERVERADDR:11194 -e "duplicate-cn" && docker run -v $configdir:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki && docker run -v $configdir:/etc/openvpn -d --name openvpn --restart=always -p 11194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn && docker run -v $configdir:/etc/openvpn --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass && docker run -v $configdir:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient CLIENTNAME > CLIENTNAME.ovpn
