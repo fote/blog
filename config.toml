@@ -1,4 +1,4 @@
-baseurl = "https://4te.me/"
+baseurl = "https://4te.me"
 languageCode = "en-us"
 title = "/4te.me"
 theme = "purehugo"
