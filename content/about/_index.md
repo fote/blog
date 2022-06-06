@@ -14,10 +14,8 @@ title = "/about"
 
 Почта - [admin@4te.me](mailto:admin@4te.me)
 
-Skype - fote4te
-
-Facebook - [http://facebook.com/roman.orlov.1989](http://facebook.com/roman.orlov.1989)
+Telegram - [@fote2](https://t.me/fote2)
 
 Github - [http://github.com/fote](http://github.com/fote)
 
-Linkedin - [https://www.linkedin.com/in/roman-orlov-79027472](https://www.linkedin.com/in/roman-orlov-79027472)
+ХабрКарьера - [https://career.habr.com/4te](https://career.habr.com/4te)
