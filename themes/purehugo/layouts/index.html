@@ -8,13 +8,13 @@
             <div class="posts">
                 {{ $paginator := .Paginate (.Data.Pages) }}
                 {{ range .Paginator.Pages }}
-                <h1 class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}</h1>
                 <section class="post">
                     <header class="post-header">
 
                         <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
 
                         <p class="post-meta">
+                            <p class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}
                             {{ with .Params.author }}
                                 By <strong class="post-author">{{ . }}</strong>
                             {{ end }}
@@ -35,9 +35,9 @@
                         {{ .Summary }}
                     </div>
                     {{ if .Truncated }}
-                    <div class="read-more-link">
-                      <a href="{{ .RelPermalink }}">read more..</a>
-                    </div>
+                    <!-- <div class="read-more-link">
+                      <a href="{{ .RelPermalink }}">Прочитать..</a>
+                    </div> -->
                     {{ end }}
                 </section>
                 {{ end }}
