@@ -430,12 +430,16 @@ h3 {
 .footer {
     text-align: center;
     padding: 1em 0;
-    color: #555;
+    color: #b4b3b3;
     font-size: 80%;
+}
+.footer a {
+  color: #99c0d9;
 }
 .footer ul li a {
     display:inline;
     padding: 0;
+    color: #85b5d5;
 }
 .hugo{
     color:#333;
