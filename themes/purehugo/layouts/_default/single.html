@@ -33,8 +33,12 @@
                         {{ .Content }}
                     
                    </div>
-                   
-                  <hr />
+                </div>
+            </div>
+        </div>
+    </div>  
+    <div class="pure-g center comments">
+        <div class="pure-u-1 pure-u-md-3-5">
                   <script>
                     var remark_config = {
                       host: 'https://comments.4te.me',
@@ -43,9 +47,10 @@
                   </script>
                   <script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);</script>
                   <div id="remark42"></div>
-            {{ partial "footer.html" . }}
         </div>
-    </div>
 </div>
+
+            {{ partial "footer.html" . }}
+
 </body>
 </html>
