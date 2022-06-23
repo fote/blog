@@ -243,6 +243,7 @@ html, button, input, select, textarea,
 a {
     text-decoration: none;
     color: rgb(61, 146, 201);
+    overflow: hidden;
 }
 a:hover,
 a:focus {
