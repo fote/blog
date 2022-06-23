@@ -1,6 +1,6 @@
 baseurl = "https://4te.me"
 languageCode = "en-us"
-title = "/4te.me"
+title = "4te.me"
 theme = "purehugo"
 disqusShortname = "4te"
 Paginate = 20
