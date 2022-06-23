@@ -84,5 +84,5 @@ Jul 13 17:10:19 ubuntu telegram-site-monitoring[1825]: 2017/07/13 17:10:19 ChatI
 Jul 13 17:10:19 ubuntu telegram-site-monitoring[1825]: 2017/07/13 17:10:19 Starting monitoring thread
 {{< /highlight >}}
 
-Шпаргалка с коммандами для управления демонами systemd - [https://4te.me/post/shpargalka-systemd/](/post/shpargalka-systemd/)
+Шпаргалка с командами для управления демонами systemd - [https://4te.me/post/shpargalka-systemd/](/post/shpargalka-systemd/)
 
