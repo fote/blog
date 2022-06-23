@@ -670,3 +670,13 @@ h3.post-title {
   float: left;
   text-align: left;
 }
+
+hr {
+  border-right : 0;
+  border-left: 0;
+}
+
+.comments {
+  background: #ededed;
+  padding-top: 20px;
+}
