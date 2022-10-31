@@ -3,7 +3,7 @@ Categories = ["desktop"]
 Description = "Возвращаем флаги раскладок в MacOS 13.0 Ventura"
 Tags = ["macos", "desktop"]
 date = "2022-10-31T19:31:41+03:00"
-title = "Как вернуть флаги раскладок клавиатуры в трей MacOS 13.0 Ventura"
+title = "Как вернуть флаг раскладки клавиатуры в трей MacOS 13.0 Ventura"
 Banner = "/img/flags-macos-ventura.png"
 +++
 
@@ -11,7 +11,7 @@ Banner = "/img/flags-macos-ventura.png"
 
 <!--more-->
 
-## Возвращаем флаги раскладок клавиатуры
+## Возвращаем флаги
 
 Я продублирую шаги из предыдущей инструкции, и добавлю те, которые нужны для MacOS 13.0 Ventura.
 
