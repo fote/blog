@@ -13,7 +13,7 @@ Banner = "/img/selenium-docker.png"
 
 ## Введение
 
-Мне известны два способа поднятия Selenium в docker-контейнерах: можно взять стандартные Selenium node и hub (https://github.com/SeleniumHQ/docker-selenium) и поднимать их. Но они довольно нестабильные и приходится перезагружать их переодически, иначе зависают; есть альтернативный способ - использовать [Selenoid](https://aerokube.com/selenoid). Это демон, который работает с Docker API и поднимает браузеры в контейнерах. 
+Мне известны два способа поднятия Selenium в docker-контейнерах. Можно взять стандартные Selenium node и hub (https://github.com/SeleniumHQ/docker-selenium) и поднимать их, но они довольно нестабильные, и приходится перезагружать их переодически, иначе зависают. А можно использовать [Selenoid](https://aerokube.com/selenoid). Это демон, который работает с Docker API и поднимает браузеры в контейнерах. 
 
 Когда тест отправляет запрос в Selenoid, в этот момент он поднимает контейнер с запрашиваемым браузером и проксирует дальнейшие запросы внутрь. Поднятие браузера занимает несколько секунд (в зависимости от браузера). Схематично это выглядит вот так:
 ![Схема работы Selenoid](https://github.com/aerokube/selenoid/raw/master/docs/img/selenoid-animation.gif)
@@ -23,7 +23,7 @@ Banner = "/img/selenium-docker.png"
 
 ## Установка
 
-Буду использовать Linux, но это будет работать и для MacOS/Windows и везде где работает Docker. 
+Буду использовать Linux, но это будет работать и для MacOS(только Intel процессоры)/Windows, и вообще везде где работает Docker. 
 
 Запустить демон Selenoid можно одной командой с помощью утилиты [cm](https://aerokube.com/cm/latest/). Качаем ее:
 {{< highlight console >}}
@@ -157,4 +157,3 @@ registry.tags url=https://registry.hub.docker.com/v2/aerokube/selenoid-ui/tags/l
 
 У самого Selenoid есть огромное количество разных фичей, можно запускать Windows и Android браузеры, полная дока есть вот здесь - https://aerokube.com/selenoid/latest/
 
-Вообще тема Selenium инфраструктуры очень обширная, вот здесь есть материалы на эту тему - https://aerokube.com/
