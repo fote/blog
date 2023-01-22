@@ -30,6 +30,7 @@ mkdir -p /etc/openvpn
 {{< highlight console >}}
 docker run -v /etc/openvpn:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://vpn.example.com -2 -C AES-256-CBC 
 {{< /highlight >}}
+
 Здесь:
 * вместо `vpn.example.com` подставьте свой домен или IP-адрес сервера
 * параметр `-2` указывает, что мы хотим сгенерировать конфиг с 2FA
@@ -53,9 +54,10 @@ docker run -v /etc/openvpn:/etc/openvpn --rm -it kylemanna/openvpn ovpn_otp_user
 docker exec -it openvpn google-authenticator --time-based --disallow-reuse --force --rate-limit=3 --rate-time=30 --window-size=3 -l "${username}@vpn.example.com" -s /etc/openvpn/otp/${username}.google_authenticator &&
 docker run -v /etc/openvpn:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient $username > $username.ovpn
 {{< /highlight >}}
- Здесь:
-   * в параметре `username` задайте имя пользователя
-   * `vpn.example.com` замените на свой домен или IP-адрес
+ 
+Здесь:
+* в параметре `username` задайте имя пользователя
+* `vpn.example.com` замените на свой домен или IP-адрес
 
 Командой выше мы генерируем клиентский сертификат (первый фактор) и настраиваем TOTP-алгоритм (второй фактор). Во время выполнения на консоль будет дважды выведен QR-код, наc интересует второй. Выполнение остановится и потребует код из приложения:
 {{< highlight console >}}
