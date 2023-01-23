@@ -32,6 +32,7 @@ docker run -v /etc/openvpn:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u
 {{< /highlight >}}
 
 Здесь:
+
  * вместо `vpn.example.com` подставьте свой домен или IP-адрес сервера
  * параметр `-2` указывает, что мы хотим сгенерировать конфиг с 2FA
  * шифр AES-256-CBC
@@ -56,6 +57,7 @@ docker run -v /etc/openvpn:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient $u
 {{< /highlight >}}
  
 Здесь:
+
  * в параметре `username` задайте имя пользователя
  * `vpn.example.com` замените на свой домен или IP-адрес
 
