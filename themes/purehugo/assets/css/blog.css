@@ -387,10 +387,21 @@ h3 {
 }
 
 .post-description img {
-    max-width: 100% !important;
+    max-width: 100%;
     max-height: 70% !important;
     display: block;
 }
+
+.full-width-img {
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: 100vw;
+  position: relative;
+  right: 50%;
+  width: 100vw;
+}
+
 .post-meta {
     color: #999;
     font-size: 90%;
@@ -681,3 +692,11 @@ hr {
   background: #ededed;
   padding-top: 20px;
 }
+
+figcaption { 
+  margin-top: -15px;
+  color: #888787;
+  font-style: italic;
+  text-align: center;
+}
+

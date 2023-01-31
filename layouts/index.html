@@ -1,0 +1,51 @@
+{{ partial "header.html" . }}
+{{ partial "topbar.html" . }}
+
+<div class="pure-g center">
+    <div class="pure-u-1 pure-u-md-3-5">
+        <div>
+            <!-- A wrapper for all the blog posts -->
+            <div class="posts">
+                {{ range .Paginator.Pages }}
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+
+                        <p class="post-meta">
+                            <p class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}
+                            {{ with .Params.author }}
+                                By <strong class="post-author">{{ . }}</strong>
+                            {{ end }}
+                            {{ if isset .Params "categories" }}
+
+                                {{ $baseUrl := .Site.BaseURL }}
+                                <span class="taglist">
+                                 {{ range .Params.tags }}
+                                   <a href="/tags/{{ . | urlize }}/">{{ . }}</a>
+                                 {{ end }}
+                                 </span> 
+                            {{ end }}
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                    <a href="{{ .RelPermalink }}"><img src="{{ .Params.Banner }}" class="suggest-pic" /></a>
+                        {{ .Summary }}
+                    </div>
+                    {{ if .Truncated }}
+                    <!-- <div class="read-more-link">
+                      <a href="{{ .RelPermalink }}">Прочитать..</a>
+                    </div> -->
+                    {{ end }}
+                </section>
+                {{ end }}
+            </div>
+            {{ partial "pagination.html" . }}
+            {{ partial "footer.html" . }}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
