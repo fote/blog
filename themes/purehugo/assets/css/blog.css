@@ -390,6 +390,7 @@ h3 {
     max-width: 100%;
     max-height: 70% !important;
     display: block;
+    border-radius: 5px;
 }
 
 .full-width-img {
