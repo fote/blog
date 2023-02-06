@@ -4,7 +4,7 @@ Description = "Список основных команд PostgreSQL для ус
 Tags = ["server","linux","postgres"]
 date = "2023-02-07T00:35:14+03:00"
 title = "Шпаргалка PostgreSQL"
-Banner = "/img/shpargalka-postgres.png"
+Banner = "/img/shpargalka-postgres.jpg"
 +++
 Здесь собрал команды, которые часто приходится выполнять работая с PostgreSQL в виде краткой шпаркалки.
 <!--more-->
