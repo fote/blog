@@ -170,9 +170,9 @@ WHERE datname = current_database()  
 
 Для бэкапов есть консольные утилиты *pg_dump* и *pg_dumpall*. Первая делает sql-дамп отдельно взятой базы, а вторая, как следует из названия, делает то же самое для всех баз (+бэкапит пользователей). Есть еще утилита *pg_basebackup*, она делает полный бэкап инстанса на уровне файлов.
 
-Дамп базы в сжатый файл:
+Дамп базы в сжатый файл (опция *-C* добавляет команду CREATE DATABASE в дамп):
 {{< highlight console >}}
-# pg_dump -U username -h hostname dbname | gzip > dump.sql.gz
+# pg_dump -C -U username -h hostname dbname | gzip > dump.sql.gz
 {{< /highlight >}}
 
 Полный дамп всех баз и пользователей в сжатый файл:
