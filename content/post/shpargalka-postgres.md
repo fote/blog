@@ -99,6 +99,11 @@ CREATE USER username WITH PASSWORD 'password';
 GRANT ALL PRIVILEGES ON DATABASE dbname TO username;
 {{< /highlight >}}
 
+Изменить пароль пользователя:
+{{< highlight postgresql >}}
+ALTER USER username WITH PASSWORD 'new_password';
+{{< /highlight >}}
+
 Удалить пользователя:
 {{< highlight postgresql >}}
 DROP USER IF EXISTS username;
