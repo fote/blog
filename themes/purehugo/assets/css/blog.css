@@ -380,10 +380,9 @@ h3 {
 }
 .post-description {
     overflow: visible;
-
-    font-size: 16px;
-    font-family: Verdana,sans-serif;
-    line-height: 160%;
+    font-size: 17px;
+    font-family: Roboto,sans-serif;
+    line-height: 170%;
 }
 
 .post-description img {
