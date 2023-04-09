@@ -19,13 +19,13 @@ Bus 001 Device 003: ID 0bda:c811 Realtek Semiconductor Corp. 802.11ac NIC
 ## Установка
 
 Вот этот драйвер подойдет к адаптерам на базе **RTL8811CU** **RTL8821CU** **RTL8731AU**, и к Linux kernel версий **4.19-6.1**:
-[https://github.com/morrownr/8821cu-20210118](https://github.com/morrownr/8821cu-20210118)
+[https://github.com/morrownr/8821cu-20210916](https://github.com/morrownr/8821cu-20210916)
 
 Устанавливаю на Ubuntu 22.10:
 {{< highlight console >}}
 sudo apt update && sudo apt install build-essential git dkms bc
-git clone https://github.com/morrownr/8821cu-20210118.git
-cd 8821cu-20210118
+git clone https://github.com/morrownr/8821cu-20210916.git
+cd 8821cu-20210916
 sudo ./install-driver.sh
 {{< /highlight >}}
 
