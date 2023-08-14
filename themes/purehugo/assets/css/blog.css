@@ -629,9 +629,10 @@ h3.post-title {
   font-family: monospace;
   color: #f2f2f2;
   font-size: 17px;
-  height: 30px;
+  min-height: 30px;
   padding-top: 10px;
   padding-left: 10px;
+  padding-bottom: 5px;
   text-align: left;
 }
 }
