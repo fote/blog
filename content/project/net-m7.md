@@ -14,7 +14,7 @@ title = "Нет трассе М-7"
 Вот примерная схема будущей трассы:
 
 {{< rawhtml >}}
-<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aef914062ace4995495fc091da76da64322a1339c1e98d7b49bda2b5bae0c0019&amp;width=100%&amp;height=720&amp;lang=ru_RU&amp;scroll=false"></script>
+<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aef914062ace4995495fc091da76da64322a1339c1e98d7b49bda2b5bae0c0019&amp;width=100%25&amp;height=480&amp;lang=ru_RU&amp;scroll=false"></script>
 {{< /rawhtml >}}
 
 Вредность такого решения кажется очевидной. Поэтому была запущена кампания против строительства трассы М7. В октябре 2023 года будет приниматься Генплан города. До этого нужно собрать как можно больше ЖИВЫХ подписей против строительства этой трассы. **Если вы живёте в Санкт-Петербурге, прошу вас поучаствовать в этой кампании и подписать петицию**.
