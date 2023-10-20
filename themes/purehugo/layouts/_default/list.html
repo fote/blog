@@ -9,7 +9,7 @@
 
             <main class="content">
 
-            	<h1 class="post-title">/{{lower .Title }}</h1>
+            	<h1 class="post-title" style="font-family: 'IBM Plex Mono', monospace; margin-bottom: 40px;">/{{lower .Title }}</h1>
                 {{ range $index, $page := .Pages }}
                     {{ .Render "li" }}
                 {{ end }}
