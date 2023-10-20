@@ -365,7 +365,7 @@ h3 {
     padding-bottom: 3em;
 }
 .post-title {
-    font-size: 3em;
+    font-size: 2.8em;
     color: #222;
     margin: 0.4em 0;
     font-weight: bold;
@@ -567,19 +567,19 @@ h3.post-title {
 
 @media(max-width:48em) {
   .arrow {
-    width: 33px;
+    width: 1.5em;
     margin-right: 8px;
     color:#5eae0e;
-    margin-bottom: -4px;
+    margin-bottom: -2px;
     margin-left: -33px;
   }
 }
 @media(min-width:48em) {
 .arrow {
-  width: 33px;
+  width: 1.5em;
   margin-right: 8px;
   color:#5eae0e;
-  margin-bottom: -4px;
+  margin-bottom: -2px;
   /* margin-left: -45px; */
 }
   }
@@ -670,7 +670,7 @@ h3.post-title {
   }
 
 .topbar-menu a {
-  font-family: monospace;
+  font-family: 'IBM Plex Mono', monospace;
   color: #fff;
   font-size: 17px;
   padding-right: 25px;
@@ -685,10 +685,10 @@ h3.post-title {
 
 .homelink a {
   text-align: center;
-  font-family: monospace;
+  font-family: 'Pixelify Sans', monospace;
   color: #fff;
   text-decoration: none;
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: bold;
 
 }
