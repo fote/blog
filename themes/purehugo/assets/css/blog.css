@@ -1,227 +1,3 @@
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/sTdaA6j0Psb920Vjv-mrzH-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/uYECMKoHcO9x1wdmbyHIm3-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/tnj4SB6DNbdaQnsM8CFqBX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/_VYFx-s824kXq_Ul2BHqYH-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
-  unicode-range: U+0370-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/NJ4vxlgWwWbEsv18dAhqnn-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/Ks_cVxiCiwUWVsFWFA3Bjn-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/77FXFjRbGzN4aCrSFhlh3oX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/isZ-wbCXNKAbnjo6_TwHToX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/UX6i4JxQDm3fVTc1CPuwqoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/jSN2CGVDbcVyCnfJfjSdfIX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
-  unicode-range: U+0370-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/PwZc-YbIL414wB9rB1IAPYX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/97uahxiqZRoncBaCEI3aW4X0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOJBw1xU1rKptJj_0jans920.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Verdana';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Verdana'), url(https://fonts.gstatic.com/l/font?kit=NcQSYPV_Usaslz2I_7VjKVKPGs1ZzpMvnHX-7fPOuAc&skey=28f652d19e80fbde&v=v7) format('woff2');
-  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Verdana';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Verdana'), url(https://fonts.gstatic.com/l/font?kit=ncjCRvrbMNDpy9W0HoD4pVKPGs1ZzpMvnHX-7fPOuAc&skey=28f652d19e80fbde&v=v7) format('woff2');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Verdana';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Verdana'), url(https://fonts.gstatic.com/l/font?kit=BX4iXAiqrjk5Xzbl9nZWYFKPGs1ZzpMvnHX-7fPOuAc&skey=28f652d19e80fbde&v=v7) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Verdana';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Verdana'), url(https://fonts.gstatic.com/l/font?kit=9C-buMKMeeG8g6D0DcKvrlKPGs1ZzpMvnHX-7fPOuAc&skey=28f652d19e80fbde&v=v7) format('woff2');
-  unicode-range: U+0370-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Verdana';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Verdana'), url(https://fonts.gstatic.com/l/font?kit=RPU4yxixI2J_DnZ2OX6V2VKPGs1ZzpMvnHX-7fPOuAc&skey=28f652d19e80fbde&v=v7) format('woff2');
-  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Verdana';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Verdana'), url(https://fonts.gstatic.com/l/font?kit=HARRXtaM2ho8f45N7bTkJFKPGs1ZzpMvnHX-7fPOuAc&skey=28f652d19e80fbde&v=v7) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Verdana';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Verdana'), url(https://fonts.gstatic.com/l/font?kit=-2MwoGSS4GpDllqDzzWKPgLUuEpTyoUstqEm5AMlJo4&skey=28f652d19e80fbde&v=v7) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Verdana';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Verdana Bold'), local('Verdana-Bold'), url(https://fonts.gstatic.com/l/font?kit=RyH8VOuHrnL7ZFKBH9s0vwsYbbCjybiHxArTLjt7FRU&skey=cd26fb9258467dcb&v=v7) format('woff2');
-  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Verdana';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Verdana Bold'), local('Verdana-Bold'), url(https://fonts.gstatic.com/l/font?kit=pEycgcJgPhrt8cR2DQ7lqgsYbbCjybiHxArTLjt7FRU&skey=cd26fb9258467dcb&v=v7) format('woff2');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Verdana';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Verdana Bold'), local('Verdana-Bold'), url(https://fonts.gstatic.com/l/font?kit=f4A2kuguRcvKiXeWJCNJ8wsYbbCjybiHxArTLjt7FRU&skey=cd26fb9258467dcb&v=v7) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Verdana';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Verdana Bold'), local('Verdana-Bold'), url(https://fonts.gstatic.com/l/font?kit=Z1LWtzFM82YS1vy7nzGKHAsYbbCjybiHxArTLjt7FRU&skey=cd26fb9258467dcb&v=v7) format('woff2');
-  unicode-range: U+0370-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Verdana';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Verdana Bold'), local('Verdana-Bold'), url(https://fonts.gstatic.com/l/font?kit=3bgtTCT5xb9_SPWAtLHvNAsYbbCjybiHxArTLjt7FRU&skey=cd26fb9258467dcb&v=v7) format('woff2');
-  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Verdana';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Verdana Bold'), local('Verdana-Bold'), url(https://fonts.gstatic.com/l/font?kit=p-ofQQxissXYYQFarAcXcwsYbbCjybiHxArTLjt7FRU&skey=cd26fb9258467dcb&v=v7) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Verdana';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Verdana Bold'), local('Verdana-Bold'), url(https://fonts.gstatic.com/l/font?kit=pl9EebNitmrHyczbC18NwQzyDMXhdD8sAj6OAJTFsBI&skey=cd26fb9258467dcb&v=v7) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}
 
 * {
     -webkit-box-sizing: border-box;
@@ -350,7 +126,7 @@ h3 {
     text-transform: uppercase;
     color: #aaa;
     padding: 0.4em 0;
-    font-size: 80%;
+    font-size: 90%;
     font-weight: 500;
     letter-spacing: 0.1em;
 }
@@ -365,10 +141,11 @@ h3 {
     padding-bottom: 3em;
 }
 .post-title {
+  font-family: 'Rubik', sans-serif;
   font-size: 2.2em;
   color: #222;
   margin: 0.4em 0;
-  font-weight: bold;
+  font-weight: 500;
 }
 .post-title:hover{
   text-decoration: none;
@@ -387,6 +164,16 @@ h3 {
     font-size: 1.2em;
     font-family: Roboto,sans-serif;
     line-height: 170%;
+}
+
+.post-description h2 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: medium;
+}
+
+.post-description h3 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: medium;
 }
 
 
@@ -522,14 +309,14 @@ h3 {
 
 .taglist a {
     border: 1px;
-    border-color: #bab8b8;
+    border-color: #9e9e9e;
     border-style: dotted;
-    color: #c2c0c0;
+    color: #9e9e9e;
     line-height: 1.5em;
     padding: .3em .6em .3em .6em;
-    vertical-align: 20%;
+    vertical-align: 10%;
     font-size: .6em;
-    font-family: "Open Sans",sans-serif;
+    font-family: "IBM Plex Mono",sans-serif;
     font-weight: 700 !important;
     text-transform: uppercase;
     letter-spacing: .05em;
