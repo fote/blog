@@ -364,13 +364,8 @@ h3 {
 .post {
     padding-bottom: 3em;
 }
-
-.posts h1 {
-  font-size: 40px;
-}
-
 .post-title {
-    font-size: 40px;
+    font-size: 2em;
     color: #222;
     margin: 0.4em 0;
     font-weight: bold;
@@ -378,7 +373,7 @@ h3 {
 }
 
 .post-title-single {
-    font-size: 40px;
+    font-size: 2em;
     color: #222;
     margin: 0;
     font-weight: bold;
