@@ -1,5 +1,6 @@
 baseurl = "https://4te.me"
-languageCode = "en-us"
+languageCode = "ru"
+defaultContentLanguage = 'ru'
 title = "4te.me"
 theme = "purehugo"
 disqusShortname = "4te"

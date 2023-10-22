@@ -12,7 +12,7 @@
                         <h1 class="post-title">{{ .Title }}</h1>
 
                         <p class="post-meta">
-                            <p class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}
+                            <p class="content-subhead">{{ .Date | time.Format ":date_long" }}
                             {{ with .Params.author }}
                                 By <strong class="post-author">{{ . }}</strong>
                             {{ end }}

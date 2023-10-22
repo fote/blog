@@ -14,7 +14,7 @@
                         <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
 
                         <p class="post-meta">
-                            <p class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}
+                            <p class="content-subhead">{{ .Date | time.Format ":date_medium" }}
                             {{ with .Params.author }}
                                 By <strong class="post-author">{{ . }}</strong>
                             {{ end }}

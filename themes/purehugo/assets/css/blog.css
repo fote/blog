@@ -123,12 +123,10 @@ h3 {
 }
 
 .content-subhead {
-    text-transform: uppercase;
     color: #aaa;
     padding: 0.4em 0;
     font-size: 90%;
-    font-weight: 500;
-    letter-spacing: 0.1em;
+    font-weight: 400;
 }
 
 .content {
@@ -395,6 +393,12 @@ h3.post-title {
   text-align: left;
   padding: 12px;
   margin-top: 10px;
+}
+
+.date-list {
+  color: #828282;
+  font-weight: 400;
+  font-size: 0.9em;
 }
 
 .project {
