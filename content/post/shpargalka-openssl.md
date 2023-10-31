@@ -35,6 +35,23 @@ echo | openssl s_client -showcerts -servername 4te.me -connect 4te.me:443 </dev/
 * параметр `-servername` указывает домен для SNI
 * параметр `-connect` указывает адрес сервера, к которому нужно подключиться
 
+## Генерация сертификата
+
+Создать ключ и самоподписанный сертификат на 365 дней (домен указывается в интерактивном режиме в поле Common Name):
+{{< highlight console >}}
+openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privkeyfile.key -out certfile.cer
+{{< /highlight >}}
+
+Создать ключ и самоподписанный сертификат на 365 дней в **неинтерактивном** режиме:
+{{< highlight console >}}
+openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privkeyfile.key -out certfile.cer -subj "/C=RU/ST=State/L=City/O=CompanyName/OU=CompanySectionName/CN=domain.ru"
+{{< /highlight >}}
+
+Создание сертфиката на основе существующего ключа (для неинтерактивного режима добавить `-subj`; см.выше):
+{{< highlight console >}}
+openssl req -x509 -key privkeyfile.key -new -days 365 -out certfile.cer
+{{< /highlight >}}
+
 ## Получение сертификата
 
 Для получение сертификата из центра сертификации (CA), нужно сгенерировать заявку на получение сертификата -- CSR. Она генерируется на основе приватного ключа.
@@ -53,23 +70,6 @@ echo | openssl s_client -showcerts -servername 4te.me -connect 4te.me:443 </dev/
 Прочитать CSR:
 {{< highlight console >}}
 openssl req -in request.csr -text -noout
-{{< /highlight >}}
-
-## Генерация сертификата
-
-Создать ключ и самоподписанный сертификат на 365 дней (домен указывается в интерактивном режиме в поле Common Name):
-{{< highlight console >}}
-openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privkeyfile.key -out certfile.cer
-{{< /highlight >}}
-
-Создать ключ и самоподписанный сертификат на 365 дней в **неинтерактивном** режиме:
-{{< highlight console >}}
-openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privkeyfile.key -out certfile.cer -subj "/C=RU/ST=State/L=City/O=CompanyName/OU=CompanySectionName/CN=domain.ru"
-{{< /highlight >}}
-
-Создание сертфиката на основе существующего ключа (для неинтерактивного режима добавить `-subj`; см.выше):
-{{< highlight console >}}
-openssl req -x509 -key privkeyfile.key -new -days 365 -out certfile.cer
 {{< /highlight >}}
 
 
