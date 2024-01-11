@@ -1,9 +1,9 @@
 +++
 Categories = ["server"]
-Description = "Как я поборол медленную загрузку фотографий в разделе Фото в Nextcloud"
+Description = "Как я поборол медленную загрузку фотографий в Nextcloud"
 Tags = ["linux", "self-hosted"]
 date = "2024-01-11T21:40:14+03:00"
-title = "Медленная работа раздела Фото в Nextcloud"
+title = "Медленная загрузка фото в Nextcloud"
 Banner = "/img/nextcloud-photo.jpg"
 +++
 
