@@ -1,7 +1,7 @@
 +++
 Categories = ["server", "postgres"]
 Description = "Список основных команд PostgreSQL для успешной копипасты в консоль"
-Tags = ["server","linux","postgres"]
+Tags = ["server","linux","postgres", "cheatsheet"]
 date = "2023-02-07T00:35:14+03:00"
 title = "Шпаргалка PostgreSQL"
 Banner = "/img/shpargalka-postgres.jpg"

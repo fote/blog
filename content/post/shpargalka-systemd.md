@@ -1,7 +1,7 @@
 +++
 Categories = ["server"]
 Description = "Основные команды systemctl jounralctl. Про systemd в Ubuntu 16.04"
-Tags = ["server","linux","systemd"]
+Tags = ["server","linux","systemd", "cheatsheet"]
 date = "2017-04-10T18:35:14+03:00"
 title = "Самая краткая шпаргалка systemd на примере Ubuntu 16.04"
 Banner = "/img/systemctl_status_nginx.png"
