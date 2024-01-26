@@ -95,7 +95,7 @@ services:
 В app контейнере работает само приложение, в cron - регулярные таски которые запускаются в фоне (разметка фотографий на карте, image recognition и проч.)
 
 В качестве входной точки на сервере я использую nginx. Вот так прокидываю запросы внутрь docker-контейнра, и использую Let'sEncrypt для HTTPS:
-{{< highlight console>}}
+{{< highlight nginx>}}
 upstream php-handler {
         server localhost:10000;
 }

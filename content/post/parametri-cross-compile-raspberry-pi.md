@@ -15,7 +15,7 @@ Banner = "/img/rpigolang.png"
 
 Для разных версий Raspberry Pi нужно указывать разные версии ARM. Узнать какой именно нужно можно в ```/proc/cpuinfo```:
 {{< highlight console >}}
-# cat /proc/cpuinfo
+$cat /proc/cpuinfo
 Processor	: ARMv6-compatible processor rev 7 (v6l)
 BogoMIPS	: 697.95
 Features	: swp half thumb fastmult vfp edsp java tls
@@ -32,6 +32,6 @@ Serial		: 00000000aa0b36f1
 
 В данном случае процессор ARM версии 6. И параметры компиляции будут такие:
 {{< highlight console >}}
-# GOOS=linux GOARCH=arm GOARM=6 go build
+$GOOS=linux GOARCH=arm GOARM=6 go build
 {{< /highlight >}}
 

@@ -10,46 +10,46 @@ Banner = "/img/terminal.jpg"
 Данные комманды были собраны из различных источников и опробованы.
 <!--more-->
 
-<br />
+
 Вставить аргумент из предыдущей команды (в терминале работает сочетание клавиш *Alt + .*; очень удобная штука) :
 {{< highlight console >}}
-# !$
+#!$
 {{< /highlight >}}
 
 Запустить последнюю команду, например, если при выполнении команды не хватило прав и нужно добавить *sudo*, то чтобы не печатать команду заново удобно пользоваться:
 {{< highlight console >}}
-# sudo !!
+#sudo !!
 {{< /highlight >}}
 
 
 Проверить открыт ли порт без telnet/nc:
 {{< highlight console >}}
-# echo >/dev/tcp/8.8.8.8/53 && echo "open"
+#echo >/dev/tcp/8.8.8.8/53 && echo "open"
 {{< /highlight >}}
 
 Выполнить команды из файла в текущем шелле:
 {{< highlight console >}}
-# source /etc/profile.d/rvm
+#source /etc/profile.d/rvm
 {{< /highlight >}}
 
 Подсктрока из переменной(первые 5 символов):
 {{< highlight console >}}
-# ${my_variable:0:5}
+#${my_variable:0:5}
 {{< /highlight >}}
 
 Создать несколько папок:
 {{< highlight console >}}
-# mkdir -p /tmp/{folder1,folder2,folder3}
+#mkdir -p /tmp/{folder1,folder2,folder3}
 {{< /highlight >}}
 
 Посмотреть дерево процессов (с форками):
 {{< highlight console >}}
-# ps axwef
+#ps axwef
 {{< /highlight >}}
 
  Проверить скорость записи диска. Данная команда пишет 512 МБ на диск и потом показывает скорость. Важным ключом является *conv=fdatasync*. Она заставляет dd сделать sync и убедится что все данные действительно записаны на диск. Если не использовать этот ключ, то dd будет писать в память и бенчмарк получится неверный:
 {{< highlight console >}}
-# dd if=/dev/zero of=/tmp/speedtest bs=1M count=512 conv=fdatasync; rm -f /tmp/speedtest
+#dd if=/dev/zero of=/tmp/speedtest bs=1M count=512 conv=fdatasync; rm -f /tmp/speedtest
 {{< /highlight >}}
 Примерные значения скорости диска:
 
@@ -60,7 +60,7 @@ Banner = "/img/terminal.jpg"
 
 Скорость чтения с диска:
 {{< highlight console >}}
-# hdparm -Tt /dev/sda
+#hdparm -Tt /dev/sda
 {{< /highlight >}}
 Примерные значения:
 
@@ -71,42 +71,42 @@ Banner = "/img/terminal.jpg"
 
 Разархивировать в новую директорию:
 {{< highlight console >}}
-# tar zxvf archive.tar.gz -C new_dir
+#tar zxvf archive.tar.gz -C new_dir
 {{< /highlight >}}
 
 Быстро создать бэкап файла:
 {{< highlight console >}}
-# cp nginx.conf{,.bak}
+#cp nginx.conf{,.bak}
 {{< /highlight >}}
 
 Доступ на расшареный ресурс Windows. После авторизации доступна команда *ls*. Чтобы скачать файл - *get somefilename.jpg*:
 {{< highlight console >}}
-# smbclient -U "DOMAIN\user" //192.168.1.1/shared
+#smbclient -U "DOMAIN\user" //192.168.1.1/shared
 {{< /highlight >}}
 
 Unzip в директорию:
 {{< highlight console >}}
-# unzip package.zip -d some_dir
+#unzip package.zip -d some_dir
 {{< /highlight >}}
 
 Переодически запускать команду и показывать вывод (по умолчанию раз в 2 секунды, менять интервал ключом *-n*):
 {{< highlight console >}}
-# watch ps aux
+#watch ps aux
 {{< /highlight >}}
 
 Создать RAM-диск:
 {{< highlight console >}}
-# mount -t tmpfs tmpfs /tmpram -o size=512m
+#mount -t tmpfs tmpfs /tmpram -o size=512m
 {{< /highlight >}}
 
 Конвертация табуляций в пробелы:
 {{< highlight console >}}
-# expand tabsfile.txt > spacefile.txt
+#expand tabsfile.txt > spacefile.txt
 {{< /highlight >}}
 
 Вернуться в предыдущую директорию:
 {{< highlight console >}}
-# cd -
+#cd -
 {{< /highlight >}}
 
 Когда *Ctrl + c* не работает:

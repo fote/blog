@@ -50,12 +50,12 @@ network:
 После написания конфига нужно выполнить две команды чтобы конфиг применился.
 Сначала перегенировать конфиг для бэкенда:
 {{< highlight console >}}
-# netplan generate
+$netplan generate
 {{< /highlight >}}
 
 Потом применить его для бэкенда:
 {{< highlight console >}}
-# netplan apply
+$netplan apply
 {{< /highlight >}}
 
 После этого изменения вступят в силу.

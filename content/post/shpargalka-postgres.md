@@ -13,7 +13,7 @@ Banner = "/img/shpargalka-postgres.jpg"
 
 Подключение к инстансу на локалхосте под пользователем postgres:
 {{< highlight console >}}
-# psql -U postgres -h localhost
+$psql -U postgres -h localhost
 {{< /highlight >}}
 
 Список баз:
@@ -199,16 +199,16 @@ WHERE datname = current_database()  
 
 Дамп базы в сжатый файл (опция *-C* добавляет команду CREATE DATABASE в дамп):
 {{< highlight console >}}
-# pg_dump -C -U username -h hostname dbname | gzip > dump.sql.gz
+$pg_dump -C -U username -h hostname dbname | gzip > dump.sql.gz
 {{< /highlight >}}
 
 Полный дамп всех баз и пользователей в сжатый файл:
 {{< highlight console >}}
-# pg_dumpall -U username -h hostname | gzip > dump.sql.gz
+$pg_dumpall -U username -h hostname | gzip > dump.sql.gz
 {{< /highlight >}}
 
 Восстановление базы (или полного дампа, но тогда не нужно указывать dbname) из сжатого файла:
 {{< highlight console >}}
-# zcat dump.sql.gz | psql -U username -h hostname dbname
+$zcat dump.sql.gz | psql -U username -h hostname dbname
 {{< /highlight >}}
 

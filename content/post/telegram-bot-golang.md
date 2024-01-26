@@ -105,8 +105,8 @@ func main() {
 
 Компилируем и пробуем запускать. 
 {{< highlight console >}}
-$ go build
-$ ./telegram-site-monitoring -telegrambottoken 3972____:____________03WRDsIU
+$go build
+$./telegram-site-monitoring -telegrambottoken 3972____:____________03WRDsIU
 2017/05/24 19:13:59 Authorized on account simplesitemonitoringbot
 2017/05/24 19:14:01 [f___] asdf
 2017/05/24 19:14:05 [f___] /start
@@ -294,7 +294,7 @@ func main() {
 Компилируем и тестируем.
 
 {{< highlight console >}}
-$ ./telegram-site-monitoring -telegrambottoken 39720____:_______________3WRDsIU -chatid -147193640
+$./telegram-site-monitoring -telegrambottoken 39720____:_______________3WRDsIU -chatid -147193640
 2017/05/25 17:32:41 No such file - starting without config
 2017/05/25 17:32:42 Authorized on account simplesitemonitoringbot
 2017/05/25 17:32:42 Config file: config.json
@@ -313,8 +313,8 @@ $ ./telegram-site-monitoring -telegrambottoken 39720____:_______________3WRDsIU 
 
 Все работает! Можно запускать на сервере демоном, или собрать docker-контейнер (https://github.com/fote/telegram-site-monitoring/blob/master/Dockerfile) и запускать с помощью docker-а:
 {{< highlight console>}}
-# mkdir /opt/tsm
-# docker run -d --restart=always --name=tsm -v /opt/tsm:/etc/tsm fote/tsm -telegrambottoken 3972_____:______________3WRDsIU -chatid -147193640
+#mkdir /opt/tsm
+#docker run -d --restart=always --name=tsm -v /opt/tsm:/etc/tsm fote/tsm -telegrambottoken 3972_____:______________3WRDsIU -chatid -147193640
 {{< /highlight >}}
 
 

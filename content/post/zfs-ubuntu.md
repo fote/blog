@@ -18,7 +18,7 @@ ZFS - это файловая система на стероидах. С пом�
 
 На последних версиях Ubuntu установка абсолютно элементарная:
 {{< highlight console >}}
-# apt install zfs zfs-utils
+#apt install zfs zfs-utils
 {{< /highlight >}}
 
 Автоматически устанавливаются модули ядра, а также тулзы для создания разделов.
@@ -30,27 +30,27 @@ ZFS - это файловая система на стероидах. С пом�
 
 Пока никаких пулов не создано:
 {{< highlight console >}}
-# zpool status
+#zpool status
 no pools available
 {{< /highlight >}}
 
 Создаем пул из сырых дисков. Пул можно также создавать из разделов диска (/dev/sdb1, /dev/sdc2 etc.):
 {{< highlight console >}}
-# zpool create -f mypoolname1 /dev/sdb /dev/sdc /dev/sdd
+#zpool create -f mypoolname1 /dev/sdb /dev/sdc /dev/sdd
 {{< /highlight >}}
 Эта команда создала пул аналогичный RAID0(stripe) - без резервирования. Автоматически на этот пул накатывается ФС.
 
 
 Смотрим созданные в системе пулы:
 {{< highlight console >}}
-# zpool list
+#zpool list
 NAME          SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
 mypoolname1  2.95G    70K  2.95G         -     0%     0%  1.00x  ONLINE  -
 {{< /highlight >}}
 
 После создания пула, просиходит его автомаунт в /
 {{< highlight console >}}
-# df -h
+#df -h
 Filesystem                   Size  Used Avail Use% Mounted on
 ....
 ....
@@ -60,7 +60,7 @@ mypoolname1                  2.9G     0  2.9G   0% /mypoolname1
 
 Меняем маунтпоинт:
 {{< highlight console >}}
-# zfs set mountpoint=/mnt/data mypoolname1
+#zfs set mountpoint=/mnt/data mypoolname1
 {{< /highlight >}}
 После выполнения сразу произойдет umount старой директории и mount в новой
 
@@ -71,12 +71,12 @@ mypoolname1                  2.9G     0  2.9G   0% /mypoolname1
 
 Вот так можно создать RAID1(mirror) с помощью zfs:
 {{< highlight console >}}
-# zpool create -f mymirrorpoolname1 mirror sdb sdc
+#zpool create -f mymirrorpoolname1 mirror sdb sdc
 {{< /highlight >}}
 
 Создание RAID10 из шести (sdb, sdc, sdd, sde, sdf, sdg) дисков выглядит так:
 {{< highlight console >}}
-# zpool create -f myraid10pool mirror sdb sdc mirror sdd sde mirror sdf sdg
+#zpool create -f myraid10pool mirror sdb sdc mirror sdd sde mirror sdf sdg
 {{< /highlight >}}
 цепочки ```mirror disk1 disk2``` можно продолжать и дальше
 
@@ -87,13 +87,13 @@ mypoolname1                  2.9G     0  2.9G   0% /mypoolname1
 
 Проверить состояние всех пулов можно так:
 {{< highlight console >}}
-# zpool status -x
+#zpool status -x
 all pools are healthy
 {{< /highlight >}}
 
 Вот так выглядит zpool status когда умер один диск:
 {{< highlight console >}}
-root@ubuntu:~# zpool status -x
+#zpool status -x
   pool: testpool
  state: DEGRADED
 status: One or more devices could not be used because the label is missing or
@@ -122,7 +122,7 @@ errors: No known data errors
 
 Вот пример из жизни когда в zfs-RAID10 массиве сломался один диск:
 {{< highlight console >}}
-root@host~# zpool status
+#zpool status
   pool: data
  state: DEGRADED
 status: One or more devices could not be used because the label is missing or
@@ -152,12 +152,12 @@ errors: No known data errors
 
 Теперь меняем диск в пуле. Мы говорим: *заменить диск, который именовался в пуле как ```sdf``` на диск, который в системе именуется ```/dev/sdf``` (так же как и старый)*:
 {{< highlight console >}}
-root@host:~# zpool replace -f data sdf /dev/sdf
+#zpool replace -f data sdf /dev/sdf
 {{< /highlight >}}
 
 После этого начинается ресинк процесс, который может занять некоторое количество времени, в зависимости от размеров. Важный нюанс — чтобы ресинк прошел до конца, нельзя делать снапшоты во время ресинка, иначе процесс доходит до 99% и останавливается (https://forums.freebsd.org/threads/resilver-taking-very-long-time.61643/).
 {{< highlight console >}}
-root@host:~# zpool status
+#zpool status
   pool: data
  state: DEGRADED
 status: One or more devices is currently being resilvered.  The pool will

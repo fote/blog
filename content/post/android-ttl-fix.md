@@ -92,29 +92,29 @@ Linux version 3.18.66-perf+ (OnePlus@ubuntu-117) (gcc version 4.9.x 20150123 (pr
 Теперь идем в консоль и готовимся к компиляции.
 Установим необходимые тулзы и склонируем репы с тулчейном и исходниками ядра в домашнюю папку:
 {{< highlight console >}}
-$ sudo apt install build-essential python-minimal libncurses5-dev libncursesw5-dev
-$ cd ~
-$ git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/
-$ git clone --branch=QC8996_O_8.0.0 https://github.com/OnePlusOSS/android_kernel_oneplus_msm8996
+$sudo apt install build-essential python-minimal libncurses5-dev libncursesw5-dev
+$cd ~
+$git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/
+$git clone --branch=QC8996_O_8.0.0 https://github.com/OnePlusOSS/android_kernel_oneplus_msm8996
 {{< /highlight >}}
 
 В исходниках ядра смотрим в папку ```arch``` и подбираем нужную архитектуру. В моем случае [в этой папке](https://github.com/OnePlusOSS/android_kernel_oneplus_msm8996/tree/oneplus/QC8996_O_8.0.0/arch), нет ```aarch64```, но есть ```arm64```. Это то же самое, просто называется по другому. Буду использовать эту архитектуру. Указываем ее и путь до бинарей тулчейна в переменных окружения:
 {{< highlight console >}}
-$ export ARCH=arm64
-$ export CROSS_COMPILE=/home/fote/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+$export ARCH=arm64
+$export CROSS_COMPILE=/home/fote/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 {{< /highlight >}}
 Переменная CROSS_COMPILE именно такая, заканчивается на ```-```. Здесь нет ошибки.
 
 
 Теперь надо создать конфиг для будущей сборки. Возможные варианты конфигов в моем случае лежат в папке с исходниками ядра в ```arch/arm64/configs``` (вместо arm64 может быть ваша архитектура). Вспоминая версию ядра, которая установлена в телефоне, выбираю конфиг ```msm-perf_defconfig```:
 {{< highlight console >}}
-$ cd ~/android_kernel_oneplus_msm8996/
-$ make msm-perf_defconfig
+$cd ~/android_kernel_oneplus_msm8996/
+$make msm-perf_defconfig
 {{< /highlight >}}
 
 После того как конфиг создан, нам надо внести в него изменения, чтобы нужный нам модуль для фиксации TTL скомпилировался. Для этого выполняем:
 {{< highlight console >}}
-$ make menuconfig
+$make menuconfig
 {{< /highlight >}}
 
 Появится интерактиваная утилита, в которой нужно найти нужный модуль.
@@ -126,8 +126,8 @@ $ make menuconfig
 
 Сохраняем конфиг, выходим, и собираем ядро с модулями:
 {{< highlight console >}}
-$ make
-$ make modules
+$make
+$make modules
 {{< /highlight >}}
 Если эти команды завершились ошибкой, значит, скорее всего неправильно выбран конфиг, toolchain или сами исходники ядра. **Определенные исходники можно собрать только подходящим тулчейном и с подходящим конфигом.**
 
@@ -146,7 +146,7 @@ OnePlus3:/ # insmod /sdcard/xt_HL.ko
 
 Если модуль загрузился, можно пробовать зафиксировать TTL:
 {{< highlight console >}}
-# iptables -t mangle -A POSTROUTING -o rmnet+ -j TTL --ttl-set 64
+#iptables -t mangle -A POSTROUTING -o rmnet+ -j TTL --ttl-set 64
 {{< /highlight >}}
 , подключиться через мобильную точку доступа и попробовать открыть какую-нибудь страничку в браузере. 
 

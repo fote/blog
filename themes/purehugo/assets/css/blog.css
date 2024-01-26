@@ -474,6 +474,9 @@ h3.post-title {
 .center {
   justify-content: center;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .left {

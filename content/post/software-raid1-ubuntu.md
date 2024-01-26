@@ -17,7 +17,7 @@ RAID1, он же "зеркало", нужен в тех случаях, когд
 
 Итак, дано два диска ```sdc``` и ```sdd```:
 {{< highlight console >}}
-# fdisk -l /dev/sdc /dev/sdd 
+#fdisk -l /dev/sdc /dev/sdd 
 Disk /dev/sdc: 1.8 TiB, 2000398934016 bytes, 3907029168 sectors
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
@@ -33,12 +33,12 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 Из них будет собрано зеркало и смонтировано в /mnt в качестве файлового хранилища.
 Если разделы больше 2ТБ, то нужно использовать parted и размечать под GPT:
 {{< highlight console >}}
-# parted -a optimal /dev/sda
+#parted -a optimal /dev/sda
 {{< /highlight >}}
 
 Если меньше 2ТБ, то можно размечать fdisk-ом. Создадим разделы типа ```fd - Linux raid auto```.
 {{< highlight console >}}
-# fdisk /dev/sdd
+#fdisk /dev/sdd
 
 Welcome to fdisk (util-linux 2.27.1).
 Changes will remain in memory only, until you decide to write them.
@@ -100,7 +100,7 @@ Syncing disks.
 
 В итоге получаем два диска и на каждом по одному разделу на весь диск:
 {{< highlight console >}}
-# fdisk -l /dev/sdc /dev/sdd
+#fdisk -l /dev/sdc /dev/sdd
 Disk /dev/sdc: 1.8 TiB, 2000398934016 bytes, 3907029168 sectors
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
@@ -126,7 +126,7 @@ Device     Boot Start        End    Sectors  Size Id Type
 
 Теперь собираем непосредственно сам RAID-массив:
 {{< highlight console >}}
-# mdadm --create --verbose /dev/md2 --level=1 --raid-devices=2 /dev/sdc1 /dev/sdd1
+#mdadm --create --verbose /dev/md2 --level=1 --raid-devices=2 /dev/sdc1 /dev/sdd1
 mdadm: Note: this array has metadata at the start and
     may not be suitable as a boot device.  If you plan to
     store '/boot' on this device please ensure that
@@ -142,7 +142,7 @@ mdadm: array /dev/md2 started.
 После того как система соберет массив, начнется процесс ресинхронизации.
 Ждем окончания ресинка:
 {{< highlight console >}}
-# cat /proc/mdstat
+#cat /proc/mdstat
 Personalities : [raid1] [linear] [multipath] [raid0] [raid6] [raid5] [raid4] [raid10]
 md2 : active raid1 sdd1[1] sdc1[0]
       1953382464 blocks super 1.2 [2/2] [UU]
@@ -152,12 +152,12 @@ md2 : active raid1 sdd1[1] sdc1[0]
 
 После того как он кончится, создаем файловую систему на устройстве массива:
 {{< highlight console >}}
-# mkfs.ext4 /dev/md2
+#mkfs.ext4 /dev/md2
 {{< /highlight >}}
 
 Теперь, чтобы зеркало автоматом собиралось после ребута, выполняем:
 {{< highlight console >}}
-# mdadm --examine --scan
+#mdadm --examine --scan
 ARRAY /dev/md/0  metadata=1.2 UUID=5c8952f8:8456e312:d0b5af49:a7e38514 name=cs37907:0
 ARRAY /dev/md/1  metadata=1.2 UUID=2b6d40e1:1d5515f0:5dfe78ca:868250d0 name=cs37907:1
 ARRAY /dev/md/2  metadata=1.2 UUID=96fea4eb:5040d522:f83a5802:ea3b6a74 name=cs37907:2
@@ -168,12 +168,12 @@ ARRAY /dev/md/2  metadata=1.2 UUID=96fea4eb:5040d522:f83a5802:ea3b6a74 name=cs37
 
 Обновляем initramfs:
 {{< highlight console >}}
-# update-initramfs -u
+#update-initramfs -u
 {{< /highlight >}}
 
 Все готово. Монтируем в /mnt:
 {{< highlight console >}}
-# mount /dev/md2 /mnt
+#mount /dev/md2 /mnt
 {{< /highlight >}}
 
 И добавляем в fstab:

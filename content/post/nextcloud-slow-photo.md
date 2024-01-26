@@ -19,7 +19,7 @@ Banner = "/img/nextcloud-photo.jpg"
 Сначала надо запустить генерацию превьюшек для уже существующих фото. Я зашел в докер-контнейнер с nextcloud-ом и выполнил:
 
 {{< highlight console>}}
-./occ preview:generate-all --path="/admin/files/Фото"
+$./occ preview:generate-all --path="/admin/files/Фото"
 {{< /highlight >}}
 
 Указал, что хочу превьюшки только из папки Фото.

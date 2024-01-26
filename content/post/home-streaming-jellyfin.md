@@ -14,8 +14,8 @@ Banner = "/img/jellyfin.jpg"
 В гугле подсказали чудесный open-source проект [Jellyfin](https://jellyfin.org). Запуск в докере за две минуты:
 
 {{< highlight console >}}
-# mkdir /opt/jellyfin/config && mkdir /opt/jellyfin/cache
-# docker run -d --name=jellyfin --net=host --restart=always -v /opt/jellyfin/config:/config -v /opt/jellyfin/cache:/cache -v /media/root/complete:/media --net=host jellyfin/jellyfin:latest
+#mkdir /opt/jellyfin/config && mkdir /opt/jellyfin/cache
+#docker run -d --name=jellyfin --net=host --restart=always -v /opt/jellyfin/config:/config -v /opt/jellyfin/cache:/cache -v /media/root/complete:/media --net=host jellyfin/jellyfin:latest
 {{< /highlight >}}
 
 И вуаля — self-hosted нетфликс ready for accept connections.

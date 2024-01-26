@@ -23,12 +23,12 @@ Banner = "/img/rpi_camera_0.jpg"
 
 После включения можно попробовать воспользоваться утилитой ```raspistill```. Это простая консольная программа для снятия изображения с камеры. Для видео также есть ```raspivid```. В Raspbian она есть уже "из коробки", для других дистрибутивов, возможно, потребуется установить:
 {{< highlight console >}}
-# apt-get install libraspberrypi-bin
+#apt-get install libraspberrypi-bin
 {{< /highlight >}}
 
 Однако с ходу получить изображение с камеры не получилось. Ругается:
 {{< highlight console >}}
-# raspistill -o img1.jpg
+#raspistill -o img1.jpg
 mmal: Cannot read camera info, keeping the defaults for OV5647
 mmal: mmal_vc_component_create: failed to create component 'vc.ril.camera' (1:ENOMEM)
 mmal: mmal_component_create_core: could not create component 'vc.ril.camera' (1)
@@ -39,13 +39,13 @@ mmal: Camera is not enabled in this build. Try running "sudo raspi-config" and e
 
 Смотрим определяется ли камера в системе:
 {{< highlight console >}}
-# vcgencmd get_camera
+#vcgencmd get_camera
 supported=0 detected=0
 {{< /highlight >}}
 
 Если нет, то скорее всего должно помочь обновление firmware. Обновляю:
 {{< highlight console >}}
-#  rpi-update
+#rpi-update
  *** Raspberry Pi firmware updater by Hexxeh, enhanced by AndrewS and Dom
  *** Performing self-update
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -85,10 +85,10 @@ https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=167934
 
 После обновления - ребут, и камера начинает работать:
 {{< highlight console >}}
-# vcgencmd get_camera
+#vcgencmd get_camera
 supported=1 detected=1
 
-# raspistill -o img1.jpg
+#raspistill -o img1.jpg
 {{< /highlight >}}
 
 Изображение с камеры выводится на экран:

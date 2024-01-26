@@ -25,7 +25,7 @@ VPN-сервер слушает на нестандартном для OpenVPN 1
 
 Поднимать OpenVPN мы будем в Docker контейнере, поэтому для начала нужно установить Docker на сервер. Это можно сделать одной командой:
 {{< highlight console >}}
-curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
+$curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
 {{< /highlight >}}
 
 Для запуска OpenVPN мы будем использовать образ [kylemanna/openvpn](https://hub.docker.com/r/kylemanna/openvpn) 
@@ -39,7 +39,7 @@ curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
 * Заменить CLIENTNAME на свое имя пользователя
 
 {{< highlight console >}}
-export configdir=/etc/openvpn && mkdir $configdir && docker run -v $configdir:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://SERVERADDR:11194 -e "duplicate-cn" && docker run -v $configdir:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki && docker run -v $configdir:/etc/openvpn -d --name openvpn --restart=always -p 11194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn && docker run -v $configdir:/etc/openvpn --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass && docker run -v $configdir:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient CLIENTNAME > CLIENTNAME.ovpn
+$export configdir=/etc/openvpn && mkdir $configdir && docker run -v $configdir:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://SERVERADDR:11194 -e "duplicate-cn" && docker run -v $configdir:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki && docker run -v $configdir:/etc/openvpn -d --name openvpn --restart=always -p 11194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn && docker run -v $configdir:/etc/openvpn --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass && docker run -v $configdir:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient CLIENTNAME > CLIENTNAME.ovpn
 {{< /highlight >}}
 
 После выполнения будет запущен VPN-сервер, и клиентский конфиг файл будет лежать в текущей директории.
@@ -49,29 +49,29 @@ export configdir=/etc/openvpn && mkdir $configdir && docker run -v $configdir:/e
 
 Создаем папку для конфигов и генерируем первичный конфиг, вместо ```SERVERADDR``` нужно подставить IP-адрес вашего сервера или его хостнейм:
 {{< highlight console >}}
-export configdir=/etc/openvpn
-mkdir $configdir
-docker run -v $configdir:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://SERVERADDR:11194 -e "duplicate-cn"
+$export configdir=/etc/openvpn
+$mkdir $configdir
+$docker run -v $configdir:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://SERVERADDR:11194 -e "duplicate-cn"
 {{< /highlight >}}
 
 Теперь создаем корневые сертификаты. Потребуется ввести пароль (минимум 5 символов) и CommonName - это имя сервера (может быть любое):
 {{< highlight console >}}
-docker run -v $configdir:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki
+$docker run -v $configdir:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki
 {{< /highlight >}}
 
 Конфигурация готова, можно запустить наш сервер:
 {{< highlight console >}}
-docker run -v $configdir:/etc/openvpn -d --name openvpn --restart=always -p 11194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn
+$docker run -v $configdir:/etc/openvpn -d --name openvpn --restart=always -p 11194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn
 {{< /highlight >}}
 
 Создаем пользователя. Потребуется пароль, который придумали выше (CLIENTNAME нужно заменить на имя юзера):
 {{< highlight console >}}
-docker run -v $configdir:/etc/openvpn --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass
+$docker run -v $configdir:/etc/openvpn --rm -it kylemanna/openvpn easyrsa build-client-full CLIENTNAME nopass
 {{< /highlight >}}
 
 Скачиваем файл конфигурации из контейнера на хост машину (CLIENTNAME нужно заменить на имя юзера):
 {{< highlight console >}}
-docker run -v $configdir:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient CLIENTNAME > CLIENTNAME.ovpn
+$docker run -v $configdir:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient CLIENTNAME > CLIENTNAME.ovpn
 {{< /highlight >}}
 
 Всё. Забираем файл с сервера, ставим [клиент OpenVPN](https://openvpn.net/vpn-client/), и импортируем этот конфиг в него. После подключения, весь траффик клиента будет проходить через VPN.

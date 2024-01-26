@@ -16,38 +16,38 @@ Unit — это базовый термин systemd, он обозначает �
 
 Список всех запущенных юнитов:
 {{< highlight console >}}
-# systemctl
+#systemctl
 {{< /highlight >}}
 
 Информация о статусе юнита:
 {{< highlight console >}}
-# systemctl status nginx
+#systemctl status nginx
 {{< /highlight >}}
 
 Релоад конфигурации демона:
 {{< highlight console >}}
-# systemctl reload nginx
+#systemctl reload nginx
 {{< /highlight >}}
 
 Релоад конфигурации systemd (нужно при создании/редактировании юнит файлов):
 {{< highlight console >}}
-# systemctl daemon-reload
+#systemctl daemon-reload
 {{< /highlight >}}
 
 
 Запустить/остановить юнит:
 {{< highlight console >}}
-# systemctl [start|stop] nginx
+#systemctl [start|stop] nginx
 {{< /highlight >}}
 
 Включить/выключить автозапуск юнита при загрузке системы:
 {{< highlight console >}}
-# systemctl [enable|disable] nginx
+#systemctl [enable|disable] nginx
 {{< /highlight >}}
 
 Список юнитов которые не запустились во время последней загрузки системы:
 {{< highlight console >}}
-# systemctl --failed
+#systemctl --failed
 {{< /highlight >}}
 
 ## journalctl
@@ -56,47 +56,47 @@ journald — пишет логи юнитов, запущенных systemd, в 
 
 Все логи всех юнитов с момента последней загрузки:
 {{< highlight console >}}
-# journalctl
+#journalctl
 {{< /highlight >}}
 
 Лог последней загрузки:
 {{< highlight console >}}
-# journalctl -b
+#journalctl -b
 {{< /highlight >}}
 
 Список послдених загрузок системы:
 {{< highlight console >}}
-# journalctl --list-boots
+#journalctl --list-boots
 {{< /highlight >}}
 
 Лог определенной загрузки (boot-id - см. предыдущую команду):
 {{< highlight console >}}
-# journalctl -b <boot-id>
+#journalctl -b <boot-id>
 {{< /highlight >}}
 
 Логи определенного юнита:
 {{< highlight console >}}
-# journalctl -u nginx
+#journalctl -u nginx
 {{< /highlight >}}
 
 Следить (tail -f) за логом определенного юнита:
 {{< highlight console >}}
-# journalctl -f -u nginx
+#journalctl -f -u nginx
 {{< /highlight >}}
 
 Посмотреть сколько занимают логи на диске:
 {{< highlight console >}}
-# journalctl --disk-usage
+#journalctl --disk-usage
 {{< /highlight >}}
 
 Ограничить объем хранимых логов (journald сам занимается ротацией) можно по размеру:
 {{< highlight console >}}
-# journalctl --vacuum-size=1G
+#journalctl --vacuum-size=1G
 {{< /highlight >}}
 
 Или по времени:
 {{< highlight console >}}
-# journalctl --vacuum-time=1week
+#journalctl --vacuum-time=1week
 {{< /highlight >}}
 
 

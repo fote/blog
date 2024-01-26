@@ -30,7 +30,7 @@ Banner = "/img/perenos_mysql_0.png"
 
 В данном случае я использую Ubuntu 16.04.3 и MySQL 5.7. Установим mysql на новый сервер:
 {{< highlight console >}}
-# apt-get update && apt-get install mysql-server
+#apt-get update && apt-get install mysql-server
 {{< /highlight >}}
 
 ## Настройка репликации master-slave
@@ -60,12 +60,12 @@ mysql> GRANT REPLICATION SLAVE ON *.* TO 'repluser'@'%' IDENTIFIED BY 'repluserp
 
 Теперь сделаем бэкап базы с помощью innobackupex (это утилита от Percona которая делает бэкап с указанием позиции в bin-логе) в директорию /tmp/mysqlbackup. [Здесь](https://www.percona.com/doc/percona-xtrabackup/LATEST/installation/apt_repo.html#installing-percona-xtrabackup-from-percona-apt-repository) инструкция по инсталяции innobackupex. 
 {{< highlight console >}}
-# innobackupex --host=127.0.0.1 --user=root --password='rootpassword' /tmp/mysqlbackup 
+#innobackupex --host=127.0.0.1 --user=root --password='rootpassword' /tmp/mysqlbackup 
 {{< /highlight >}}
 
 Можно запускать в [докер-контейнере](https://hub.docker.com/r/vadio/innobackupex/):
 {{< highlight console >}}
-docker run --rm -it -v /var/lib/mysql/:/var/lib/mysql --net=host -v /tmp/mysqlbackup:/innobackupex vadio/innobackupex innobackupex --host=127.0.0.1 --user=root --password='rootpassword'
+#docker run --rm -it -v /var/lib/mysql/:/var/lib/mysql --net=host -v /tmp/mysqlbackup:/innobackupex vadio/innobackupex innobackupex --host=127.0.0.1 --user=root --password='rootpassword'
 {{< /highlight >}}
 
 В конце вывода будет что-то типа:
@@ -78,13 +78,13 @@ MySQL binlog position: filename 'mysql-bin.000001', position '26115'
 
 Копируем папку с бэкапом на новый сервер. Например rsync-ом (предварительно надо сделать доступ на новый сервер со старого по ssh):
 {{< highlight console >}}
-# rsync -av /tmp/mysqlbackup/2018-01-22_14-55-42 root@2.2.2.2:/tmp/
+#rsync -av /tmp/mysqlbackup/2018-01-22_14-55-42 root@2.2.2.2:/tmp/
 {{< /highlight >}}
 
 Когда перенос закончится, логинимся на новый сервер и разворачиваем бэкап. Для этого скопируем содержимое папки бэкапа в /var/lib/mysql и запустим innobackupex:
 {{< highlight console >}}
-# mv /tmp/2018-01-22_14-55-42/ /var/lib/mysql/
-# innobackupex --apply-log /var/lib/mysql/
+#mv /tmp/2018-01-22_14-55-42/ /var/lib/mysql/
+#innobackupex --apply-log /var/lib/mysql/
 {{< /highlight >}}
 
 Запускаем MySQL на новом сервере, заходим в mysql-консоль, и прописываем адрес мастера и момент времени с которого надо начинать подтягивать данные:

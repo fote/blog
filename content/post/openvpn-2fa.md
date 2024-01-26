@@ -23,12 +23,12 @@ Banner = "/img/openvpn-2fa.png"
 
 Создадим директорию для конфига:
 {{< highlight console >}}
-mkdir -p /etc/openvpn
+#mkdir -p /etc/openvpn
 {{< /highlight >}}
 
 Генерируем конфиг:
 {{< highlight console >}}
-docker run -v /etc/openvpn:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://vpn.example.com -2 -C AES-256-CBC 
+#docker run -v /etc/openvpn:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u udp://vpn.example.com -2 -C AES-256-CBC 
 {{< /highlight >}}
 
 Здесь:
@@ -39,20 +39,20 @@ docker run -v /etc/openvpn:/etc/openvpn --rm kylemanna/openvpn ovpn_genconfig -u
 
 Создаем корневые сертификаты. Потербуется ввести пассфразу. Она понадобится в дальнейшем при создании пользователей:
 {{< highlight console >}}
-docker run -v /etc/openvpn:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki
+#docker run -v /etc/openvpn:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki
 {{< /highlight >}}
 
 Запускаем сервер:
 {{< highlight console >}}
-docker run -v /etc/openvpn:/etc/openvpn -d --name openvpn --restart=always -p 1194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn
+#docker run -v /etc/openvpn:/etc/openvpn -d --name openvpn --restart=always -p 1194:1194/udp --cap-add=NET_ADMIN kylemanna/openvpn
 {{< /highlight >}}
 
 Готово. Сервер работает. Теперь создадим пользователя. Вот готовая копипаста, в которой выполняется несколько команд последовательно. В ней нужно заменить несколько параметров:
 {{< highlight console >}}
-export username="user1" &&
-docker exec -it openvpn easyrsa build-client-full $username nopass &&
-docker run -v /etc/openvpn:/etc/openvpn --rm -it kylemanna/openvpn ovpn_otp_user $username &&
-docker exec -it openvpn google-authenticator --time-based --disallow-reuse --force --rate-limit=3 --rate-time=30 --window-size=3 -l "${username}@vpn.example.com" -s /etc/openvpn/otp/${username}.google_authenticator &&
+#export username="user1" && \
+docker exec -it openvpn easyrsa build-client-full $username nopass && \
+docker run -v /etc/openvpn:/etc/openvpn --rm -it kylemanna/openvpn ovpn_otp_user $username && \
+docker exec -it openvpn google-authenticator --time-based --disallow-reuse --force --rate-limit=3 --rate-time=30 --window-size=3 -l "${username}@vpn.example.com" -s /etc/openvpn/otp/${username}.google_authenticator && \
 docker run -v /etc/openvpn:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient $username > $username.ovpn
 {{< /highlight >}}
  

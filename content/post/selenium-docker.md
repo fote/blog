@@ -27,12 +27,12 @@ Banner = "/img/selenium-docker.png"
 
 Запустить демон Selenoid можно одной командой с помощью утилиты [cm](https://aerokube.com/cm/latest/). Качаем ее:
 {{< highlight console >}}
-$ curl -s https://aerokube.com/cm/bash | bash
+$curl -s https://aerokube.com/cm/bash | bash
 {{< /highlight >}}
 
 И запускаем:
 {{< highlight console >}}
-$ ./cm selenoid start --vnc
+$./cm selenoid start --vnc
 > Using Docker
 - Your Docker API version is 1.40
 > Selenoid is already downloaded
@@ -67,14 +67,14 @@ registry.tags url=https://registry.hub.docker.com/v2/selenoid/opera/tags/list re
 Когда образы скачаются, запустится Selenoid и повесится на порт 4444. Можно туда нацеливать свои тесты.
 
 {{< highlight console >}}
-$ docker ps
+$docker ps
 CONTAINER ID        IMAGE                      COMMAND                  CREATED              STATUS              PORTS                    NAMES
 1f5068e6845b        aerokube/selenoid:latest   "/usr/bin/selenoid -…"   About a minute ago   Up About a minute   0.0.0.0:4444->4444/tcp   selenoid
 {{< /highlight >}}
 
 Доступные браузеры и сколько сейчас запущено можно смотреть по урлу ```/status```:
 {{< highlight console >}}
-$ curl http://localhost:4444/status
+$curl http://localhost:4444/status
 {"total":5,"used":0,"queued":0,"pending":0,"browsers":{"chrome":{"78.0":{},"79.0":{}},"firefox":{"70.0":{},"71.0":{}},"opera":{"64.0":{},"65.0":{}}}}
 {{< /highlight >}}
 
@@ -110,7 +110,7 @@ finally:
 Просто открывает duckduckgo.com и делает скриншот. Нацеливаю его на локально работающий selenoid - ```
 http://localhost:4444/wd/hub```, указываю ```chrome 78.0``` в capabilities и запускаю:
 {{< highlight console >}}
-$ time python test.py
+$time python test.py
 Session ID is: 4ce050ba-fd1a-44df-a19b-e4e2da134232
 Opening the page...
 Taking screenshot...
@@ -126,7 +126,7 @@ real	0m8.634s
 
 У selenoid есть и web-UI, он устанавливается отдельно. Это отдельный контейнер. Запустить можно так же с помощью ```cm```:
 {{< highlight console >}}
-$ ./cm selenoid-ui start
+$./cm selenoid-ui start
 > Using Docker
 - Your Docker API version is 1.40
 > Downloading Selenoid UI...

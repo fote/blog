@@ -65,7 +65,7 @@ Banner = "/img/ipv6.png"
 
 Посмотреть список MAC-адресов в linux можно командой:
 {{< highlight console >}}
-# ip -6 neigh show
+#ip -6 neigh show
 2a03:b0c0:0:1010::1 dev eth0 lladdr 00:00:5e:00:02:96 router STALE
 fe80::1 dev eth0 lladdr 00:00:5e:00:02:96 router STALE
 {{< /highlight >}}
@@ -75,13 +75,13 @@ fe80::1 dev eth0 lladdr 00:00:5e:00:02:96 router STALE
 
 Сбросить этот кэш можно так:
 {{< highlight console >}}
-# ip neigh flush dev eth0
+#ip neigh flush dev eth0
 {{< /highlight >}}
 
 
 После этого все записи переходят в состояние FAILED, и через несколько секунд удаляются:
 {{< highlight console >}}
-# ip -6 neigh show
+#ip -6 neigh show
 2001:db8:0:2::1 dev eth0  router FAILED
 fe80::85d:8fff:fe1b:7590 dev eth0  router FAILED
 {{< /highlight >}}

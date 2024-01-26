@@ -49,23 +49,23 @@ WantedBy=multi-user.target
 
  Далее делаем релоад systemd:
 {{< highlight console >}}
-# systemctl daemon-reload
+#systemctl daemon-reload
 {{< /highlight >}}
 
 И добавляем созданный юнит в автозагрузку:
 {{< highlight console >}}
-# systemctl enable telegram-bot.service
+#systemctl enable telegram-bot.service
 Created symlink from /etc/systemd/system/multi-user.target.wants/telegram-bot.service to /etc/systemd/system/telegram-bot.service.```
 {{< /highlight >}}
 
 Все. Сервис добавлен в автозагрузку, но еще не запущен. Запустим:
 {{< highlight console >}}
-# systemctl start telegram-bot
+#systemctl start telegram-bot
 {{< /highlight >}}
 
 Запустился:
 {{< highlight console >}}
-# systemctl status telegram-bot
+#systemctl status telegram-bot
 ● telegram.service - TelegramBotMonitoring
    Loaded: loaded (/etc/systemd/system/telegram-bot.service; enabled; vendor preset: enabled)
    Active: active (running) since Thu 2017-07-13 17:10:19 MSK; 5s ago

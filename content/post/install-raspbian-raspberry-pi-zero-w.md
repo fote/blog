@@ -67,7 +67,7 @@ GPIO пины здесь нужно напаять вручную, вот так
 Подключаем карту и смотрим какие диски есть в системе:
 
 {{< highlight console >}}
-$ diskutil list
+$diskutil list
 /dev/disk0 (internal, physical):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:      GUID_partition_scheme                        *251.0 GB   disk0
@@ -89,19 +89,19 @@ $ diskutil list
 
 Видно что /dev/disk2 - это наша флешка. Отмонтируем ее:
 {{< highlight console >}}
-$ diskutil unmountDisk /dev/disk2
+$diskutil unmountDisk /dev/disk2
 {{< /highlight >}}
 
 И теперь запишем образ Raspbian (не надо добавлять номер раздела, просто /dev/disk2):
 {{< highlight console >}}
-$ sudo dd bs=1m if=2017-09-07-raspbian-stretch-lite.img of=/dev/disk2 conv=sync
+$sudo dd bs=1m if=2017-09-07-raspbian-stretch-lite.img of=/dev/disk2 conv=sync
 {{< /highlight >}}
 
 ### ***Linux***
 
 Подключаем карту и смотрим какие диски есть в системе:
 {{< highlight console >}}
-$ sudo fdisk -l
+$sudo fdisk -l
 
 Disk /dev/sda: 111.8 GiB, 120034123776 bytes, 234441648 sectors
 
@@ -129,12 +129,12 @@ Device Boot Start End Sectors Size Id Type
 
 Наша флешка - ```/dev/sdc```. Если замонтирован раздел, размонтируем:
 {{< highlight console >}}
-$ sudo umount /dev/sdc1
+$sudo umount /dev/sdc1
 {{< /highlight >}}
 
 И теперь запишем образ Raspbian (не надо добавлять номер раздела, просто /dev/sdc):
 {{< highlight console >}}
-$ sudo dd bs=1m if=2017-09-07-raspbian-stretch-lite.img of=/dev/sdc conv=sync
+$sudo dd bs=1m if=2017-09-07-raspbian-stretch-lite.img of=/dev/sdc conv=sync
 {{< /highlight >}}
 
 
@@ -176,7 +176,7 @@ network={
 
 Рестартуем:
 {{< highlight console >}}
-$ sudo reboot
+$sudo reboot
 {{< /highlight >}}
 
 Вуаля! Интерфейс wlan0 получил IP-адрес от роутера и готов к работе:

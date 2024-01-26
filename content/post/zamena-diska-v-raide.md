@@ -15,7 +15,7 @@ Banner = "/img/zamena_diska_v_raid.png"
 
 Имеется такая конфигурация:
 {{< highlight console >}}
-# cat /proc/mdstat
+#cat /proc/mdstat
 Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]
 md0 : active raid1 sdb1[1] sda1[0]
       20964672 blocks super 1.0 [2/2] [UU]
@@ -58,7 +58,7 @@ md1 : active raid1 sdb2[1] sda2[0]
 
 В SMART-е:
 {{< highlight console >}}
-# smartctl -x /dev/sdb | grep -i error
+#smartctl -x /dev/sdb | grep -i error
        					was completed without error.
        					without error or no self-test has ever
 Error logging capability:        (0x01)	Error logging supported.
@@ -95,7 +95,7 @@ SCT Error Recovery Control:
 
 Так выглядит здоровый диск:
 {{< highlight console >}}
-# smartctl -x /dev/sda | grep -i error
+#smartctl -x /dev/sda | grep -i error
        					was completed without error.
        					without error or no self-test has ever
 Error logging capability:        (0x01)	Error logging supported.
@@ -126,13 +126,13 @@ Seek_Error_Rate. У WD должен быть 0 или, по крайней ме�
 
 В общем будем менять /dev/sdb. Для этого помечаем его как сбойный в обоих массивах:
 {{< highlight console >}}
-# mdadm /dev/md0 --fail /dev/sdb1
-# mdadm /dev/md1 --fail /dev/sdb2
+#mdadm /dev/md0 --fail /dev/sdb1
+#mdadm /dev/md1 --fail /dev/sdb2
 {{< /highlight >}}
 
 После этого mdstat выглядит вот так:
 {{< highlight console >}}
-# cat /proc/mdstat
+#cat /proc/mdstat
 Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]
 md0 : active raid1 sdb1[1](F) sda1[0]
       20964672 blocks super 1.0 [2/1] [U_]
@@ -143,12 +143,12 @@ md1 : active raid1 sdb2[1](F) sda2[0]
 [U_] означает что один из дисков помечен как сбойный, и выведен из массива. Если дисков например 4 штуки, то будет [U_UU]
 Теперь удаляем диски из массива:
 {{< highlight console >}}
-# mdadm /dev/md0 --remove /dev/sdb1
-# mdadm /dev/md1 --remove /dev/sdb2
+#mdadm /dev/md0 --remove /dev/sdb1
+#mdadm /dev/md1 --remove /dev/sdb2
 {{< /highlight >}}
 
 {{< highlight console >}}
-# cat /proc/mdstat
+#cat /proc/mdstat
 Personalities : [linear] [multipath] [raid0] [raid1] [raid6] [raid5] [raid4] [raid10]
 md0 : active raid1 sda1[0]
       20964672 blocks super 1.0 [2/1] [U_]
@@ -162,15 +162,15 @@ unused devices: <none>
 
 Если диск меняет инженер дата-центра, то для безопасности стоит удалить таблицу разделов, и забить диск нулями, чтобы данные невозможно было восстановить. Для этого потребуется достаточно много времени(несколько часов):
 {{< highlight console >}}
-# sgdisk -Z /dev/sdb
-# dd if=/dev/zero of=/dev/sdb
+#sgdisk -Z /dev/sdb
+#dd if=/dev/zero of=/dev/sdb
 {{< /highlight >}}
 
 
 
 Всё. Теперь явно удаляем диск из системы:
 {{< highlight console >}}
-# echo 1 >/sys/block/sdb/device/delete
+#echo 1 >/sys/block/sdb/device/delete
 {{< /highlight >}}
 
 После отключения в dmesg появляется запись об этом:
@@ -189,27 +189,27 @@ unused devices: <none>
 
 Если диск не появляется в системе автоматически, можно заставить систему перечитать список подключенных устройств:
 {{< highlight console >}}
-# echo "- - -" >/sys/class/scsi_host/hostX/scan
+#echo "- - -" >/sys/class/scsi_host/hostX/scan
 {{< /highlight >}}
 Где X — число от 0 до 6. Цифры соответствуют контроллерам ata1, ata2 и т.д., только у host нумерация с 0.
 
 Когда диск появится в системе, то копируем разметку с соседнего диска (важно не перепутать в этой команде приемник и источник,
   ```sgdisk -G -R [куда_копируем] [откуда копируем])``` :
 {{< highlight console >}}
-# sgdisk -G -R /dev/sdb /dev/sda
+#sgdisk -G -R /dev/sdb /dev/sda
 {{< /highlight >}}
 
 И, наконец, добавляем разделы нового диска обратно в соответствующие рейды, и смотрим результат:
 {{< highlight console >}}
-# mdadm /dev/md0 --add /dev/sdb1
-# mdadm /dev/md1 --add /dev/sdb2
+#mdadm /dev/md0 --add /dev/sdb1
+#mdadm /dev/md1 --add /dev/sdb2
 {{< /highlight >}}
 
 Если добавление прошло успешно, начнется ресинхронизация массива. Этот процесс идет в фоне, и может занять несколько часов. За ним можно наблюдать в ```/proc/mdstat```. Ресинк влияет на приложения, которые совершают ввод-вывод в это время. Чтобы снизить это влияние, можно подрезать скорость ресинхронизации.
 Для этого крутим параметры ```/proc/sys/dev/raid/speed_limit_min``` и  ```/proc/sys/dev/raid/speed_limit_max```. Значения по умолчания min=1000, max=200000. Уменьшим до 20000, например:
 
 {{< highlight console >}}
-# echo 20000 > /proc/sys/dev/raid/speed_limit_max
+#echo 20000 > /proc/sys/dev/raid/speed_limit_max
 {{< /highlight >}}
 
 На этом все, по окончанию мы имеем RAID с двумя здоровыми винтами.

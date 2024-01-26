@@ -30,7 +30,7 @@ PTR-записи прописываются тем, кому приндалеж�
 
 Проверить PTR-запись можно командой host:
 {{< highlight console >}}
-$ host 37.139.13.13
+$host 37.139.13.13
 13.13.139.37.in-addr.arpa domain name pointer 4te.me.
 {{< /highlight >}}
 
@@ -65,8 +65,8 @@ DKIM — это механизм подписи всех писем цифров
 
 Создаем пару ключей (длина обязательно 1024):
 {{< highlight console >}}
-# openssl genrsa -out private_dkim_key.pem 1024
-# openssl rsa -pubout -in private_dkim_key.pem -out public_dkim_key.pem 
+#openssl genrsa -out private_dkim_key.pem 1024
+#openssl rsa -pubout -in private_dkim_key.pem -out public_dkim_key.pem 
 {{< /highlight >}}
 
 Добавляем TXT запись 
@@ -118,9 +118,9 @@ _dmarc.mydomain.ru TXT "v=DMARC1; fo=0; p=none; rua=mailto:dmarc_reports@mydomai
 
 Создадим на хост машине папки для DKIM, почтовой очерди и логов. Потом эти папки подмонтируем в контейнер:
 {{< highlight console >}}
-# mkdir -p /etc/postfix/dkim
-# mkdir -p /var/spool/postfix
-# mkdir -p /var/log/postfix
+#mkdir -p /etc/postfix/dkim
+#mkdir -p /var/spool/postfix
+#mkdir -p /var/log/postfix
 {{< /highlight >}}
 
 DKIM приватный ключ (публичный в TXT записи), который генерировали выше положим сюда (имя обязательно такое): 
@@ -130,7 +130,7 @@ DKIM приватный ключ (публичный в TXT записи), ко�
 
 И запускаем контейнер:
 {{< highlight console >}}
-# docker run -d --name=postfix \
+#docker run -d --name=postfix \
  -p 127.0.0.1:25:25 \
  -e POSTFIX_RAW_CONFIG_SMTPD_USE_TLS=no \
  -v /var/spool/postfix:/var/spool/postfix \
@@ -152,19 +152,19 @@ DKIM приватный ключ (публичный в TXT записи), ко�
 Проверить работоспособность можно маленькой утилиткой mail-checker [http://github.com/fote/mail-checker](http://github.com/fote/mail-checker). Она отправляет тестовое письмо на указанный адрес через только что поднятый MTA:
 
 {{< highlight console >}}
-# wget -O mail-checker https://github.com/fote/mail-checker/releases/download/1.0/mail-checker.linux.amd64 && chmod +x mail-checker
+#wget -O mail-checker https://github.com/fote/mail-checker/releases/download/1.0/mail-checker.linux.amd64 && chmod +x mail-checker
 
-# ./mail-checker -mailHost 127.0.0.1 -mailPort 25 -username no-reply -password N0replyuserP@ssw0rd -to mymail@gmail.com -from no-reply@mydomain.ru
+#./mail-checker -mailHost 127.0.0.1 -mailPort 25 -username no-reply -password N0replyuserP@ssw0rd -to mymail@gmail.com -from no-reply@mydomain.ru
 {{< /highlight >}}
 
 
 Или по старинке через nc / telnet:
 {{< highlight console >}}
-# echo -ne '\0no-reply\0N0replyuserP@ssw0rd' | openssl enc -base64
+#echo -ne '\0no-reply\0N0replyuserP@ssw0rd' | openssl enc -base64
 AG5vLXJlcGx5AE4wcmVwbHl1c2VyUEBzc3cwcmQ=
 
 
-# nc -v 127.0.0.1 25
+#nc -v 127.0.0.1 25
 172.17.0.4 (172.17.0.4:25) open
 220 mydomain.ru ESMTP
 ehlo localhost

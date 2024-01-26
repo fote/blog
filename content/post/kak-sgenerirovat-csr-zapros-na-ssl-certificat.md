@@ -14,17 +14,17 @@ Banner = "/img/ssl-csr.png"
 
 Генерация ключа с паролем:
 {{< highlight console >}}
-# openssl genrsa -des3 -out private.key 2048
+$openssl genrsa -des3 -out private.key 2048
 {{< /highlight >}}
 
 Генерация ключа БЕЗ пароля:
 {{< highlight console >}}
-# openssl genrsa -out private.key 2048
+$openssl genrsa -out private.key 2048
 {{< /highlight >}}
 
 Теперь на основе ключа генерируем CSR:
 {{< highlight console >}}
-# openssl req -new -key private.key -out request.csr
+$openssl req -new -key private.key -out request.csr
 {{< /highlight >}}
 
 После указания параметров (страна, организация, домен и проч.), появится файл с CSR. Он отправляется провайдеру SSL для получения сертификата.

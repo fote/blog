@@ -23,10 +23,10 @@ Bus 001 Device 003: ID 0bda:c811 Realtek Semiconductor Corp. 802.11ac NIC
 
 Устанавливаю на Ubuntu 22.10:
 {{< highlight console >}}
-sudo apt update && sudo apt install build-essential git dkms bc
-git clone https://github.com/morrownr/8821cu-20210916.git
-cd 8821cu-20210916
-sudo ./install-driver.sh
+$sudo apt update && sudo apt install build-essential git dkms bc
+$git clone https://github.com/morrownr/8821cu-20210916.git
+$cd 8821cu-20210916
+$sudo ./install-driver.sh
 {{< /highlight >}}
 
 Если все прошло успешно, скрипт спросит "Do you want to edit the driver options file now?" - отказываемся. На предложение перезагрузки соглашаемся :)

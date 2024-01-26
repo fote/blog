@@ -25,7 +25,7 @@ LVM — это прослойка между дисками и ОС, котор�
 
 Итак, допустим у нас был диск /dev/sda, свободное место на нем закончилось, и нужно расширить рутовый раздел:
 {{< highlight console >}}
-# fdisk -l
+#fdisk -l
 
 Disk /dev/sda: 32.2 GB, 32212254720 bytes
 255 heads, 63 sectors/track, 3916 cylinders
@@ -44,12 +44,12 @@ Partition 1 does not end on cylinder boundary.
 
 Если разделы больше 2ТБ, то нужно использовать parted и размечать под GPT:
 {{< highlight console >}}
-# parted -a optimal /dev/sdb
+#parted -a optimal /dev/sdb
 {{< /highlight >}}
 
 Если меньше 2ТБ, то можно размечать fdisk-ом. Создадим LVM раздел на этом диске с помощью fdisk:
 
-{{< highlight console >}}# fdisk /dev/sdb
+{{< highlight console >}}#fdisk /dev/sdb
 
  /dev/sdb
 Команда (m для справки): n
@@ -76,36 +76,36 @@ p
 {{< /highlight >}}
 Здесь нужен ребут. Или если нужно без ребута, то:
 {{< highlight console >}}
-# echo 1 > /sys/block/sdb/device/rescan
+#echo 1 > /sys/block/sdb/device/rescan
 {{< /highlight >}}
 Это заставит систему перечитать таблицу разделов на указанном диске.
 
 Теперь можно запустить lvm:
 {{< highlight console >}}
-# lvm
+#lvm
 {{< /highlight >}}
 
 И создать физический том из раздела /dev/sdb1:
 {{< highlight console >}}
-# lvm> pvcreate /dev/sdb1
+#lvm> pvcreate /dev/sdb1
 {{< /highlight >}}
 
 Узнаем имя VG:
 {{< highlight console >}}
-# vgs
+#vgs
   VG                #PV #LV #SN Attr   VSize  VFree
   VolGroup00         2   2   0 wz--n- 20.50g    0
 {{< /highlight >}}
 Расширяем VG за счет созданного PV:
 
 {{< highlight console >}}
-# vgextend VolGroup00 /dev/sdb1
+#vgextend VolGroup00 /dev/sdb1
 {{< /highlight >}}
 
 Узнаем имя LV:
 
 {{< highlight console >}}
-# lvs
+#lvs
   LV      VG                Attr     LSize  Pool Origin Data%  Move Log Copy%  Convert
   lv_root VolGroup00 -wi-ao-- 35.53g
   lv_swap VolGroup00 -wi-ao--  3.97g
@@ -114,13 +114,13 @@ p
 Расширяем lv_root:
 
 {{< highlight console >}}
-# lvextend -l +100%FREE /dev/VolGroup00/lv_root
+#lvextend -l +100%FREE /dev/VolGroup00/lv_root
 {{< /highlight >}}
 
 И последнее, что нужно сделать — расширить файловую систему:
 
 {{< highlight console >}}
-# resize2fs -p /dev/mapper/VolGroup00-lv_root
+#resize2fs -p /dev/mapper/VolGroup00-lv_root
 {{< /highlight >}}
 
 Всё. После этого можно использовать новый расширенный диск.
