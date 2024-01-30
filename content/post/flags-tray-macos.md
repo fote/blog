@@ -11,7 +11,7 @@ Banner = "/img/flags-macos-ventura.png"
 
 <!--more-->
 
-Этот способ я подсмотрел на [iphones.ru](https://www.iphones.ru/iNotes/kak-vernut-flagi-dlya-yazykov-klaviatury-v-status-bare-macos-124-i-novee-05-18-2022), однако там иконки сделаны неаккуратно, поэтому я заменил иконки на те, что более похожи на родные МакОСёвые. И еще я добавил Британский флаг.
+Этот способ я подсмотрел на [iphones.ru](https://www.iphones.ru/iNotes/kak-vernut-flagi-dlya-yazykov-klaviatury-v-status-bare-macos-124-i-novee-05-18-2022), однако там иконки сделаны неаккуратно, поэтому я заменил иконки на те, что более похожи на родные МакОСёвые. И еще я добавил британский флаг.
 
 ## Возвращаем флаги
 
