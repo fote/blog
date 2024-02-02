@@ -3,7 +3,7 @@ Banner = "/img/stihtok.jpg"
 Categories = ["project"]
 Description = "Приложение для чтения стихов"
 Tags = []
-date = "2024-01-09T18:31:06+03:00"
+date = "2024-02-02T18:31:06+03:00"
 title = "СтихТок"
 
 +++
