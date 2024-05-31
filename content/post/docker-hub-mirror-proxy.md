@@ -22,6 +22,29 @@ Since Docker is a US company, we must comply with US export control regulations.
 
 Чтобы организовать зеркало, поднадобится виртуалка за границей. Сегодня уже многие российские VPC-провайдеры предоставляют возможность поднимать виртуалки в соседних странах, что очень удобно для обхода блокировок.
 
+## Быстрофикс
+
+Есть публичное зеркало от TimeWeb - https://dockerhub.timeweb.cloud. Если не хочется заморачиваться со своим, то можно использовать его. Для этого в файл `/etc/docker/daemon.json` (на десктопе - в настройки docker engine - см.скриншот ниже) надо добавить:
+
+{{< highlight json >}}
+"registry-mirrors": [ "https://dockerhub.timeweb.cloud"]
+{{< /highlight >}}
+
+Вот так выглядит мой полный daemon.json:
+{{< highlight json >}}
+{
+  "registry-mirrors": ["https://dockerhub.timeweb.cloud"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m",
+    "max-file": "3"
+  }
+}
+{{< /highlight >}}
+
+И перезапустить докер: `service docker restart`. После этого можно пуллить образы.
+
+
 ## Решение
 
 Я использовал [Docker Registry](https://distribution.github.io/distribution/) от самого докера. Сейчас он называется Distribution — это программа, которая позволяет создать свой приватный container registry. В ней есть функция проксирования+кэш внешних репозиториев. Она и понадобится.
