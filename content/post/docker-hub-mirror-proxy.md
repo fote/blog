@@ -22,7 +22,7 @@ Since Docker is a US company, we must comply with US export control regulations.
 
 ## Быстрофикс
 
-Есть публичное зеркало от TimeWeb - https://dockerhub.timeweb.cloud. Если не хочется заморачиваться со своим, то можно использовать его. Для этого в файл `/etc/docker/daemon.json` (на десктопе - в настройки docker engine - см.скриншот ниже) надо добавить:
+Я перепробовал кучу зеркал из интернета, вот это единственное, которое вызывает доверие и работает надежно - https://dockerhub.timeweb.cloud. Если не хочется заморачиваться со своим, то можно использовать его. Для этого в файл `/etc/docker/daemon.json` (на десктопе - в настройки docker engine - см.скриншот ниже) надо добавить:
 
 {{< highlight json >}}
 "registry-mirrors": [ "https://dockerhub.timeweb.cloud"]
