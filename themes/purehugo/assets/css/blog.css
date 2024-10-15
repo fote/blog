@@ -158,7 +158,8 @@ h3 {
     margin-left: 1em;
 }
 .post-description {
-    overflow: visible;
+    overflow: hidden;
+    word-wrap: break-word;
     font-size: 1.1em;
     font-family: Roboto,sans-serif;
     line-height: 170%;
