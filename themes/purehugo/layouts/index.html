@@ -2,8 +2,8 @@
 {{ partial "topbar.html" . }}
 
 <div class="pure-g main-set">
-  <div class="pure-u-1 pure-u-md-17-24 pure-u-lg-15-24 pure-u-xl-12-24 pure-u-xxl-10-24">
-    <fieldset style="margin-top:10px" class="block">
+  <div class="pure-u-1 pure-u-md-17-24 pure-u-lg-15-24 pure-u-xl-15-24 pure-u-xxl-15-24">
+    <fieldset style="margin-top:15px" class="block">
       <legend style="background-color: #DB908A;" class="legend">оффлайн</legend>
     </fieldset>
   </div>
@@ -31,15 +31,15 @@
 
 
 <div class="pure-g main-set">
-  <div class="pure-u-1 pure-u-md-17-24 pure-u-lg-15-24 pure-u-xl-12-24 pure-u-xxl-10-24">
-    <fieldset class="block">
-      <legend style="background-color: #8AB2DB;" class="legend">проекты</legend>
+  <div class="pure-u-1 pure-u-md-17-24 pure-u-lg-15-24 pure-u-xl-14-24 pure-u-xxl-10-24">
+    <fieldset style="margin-top:15px" class="block">
+      <legend style="background-color: #8AB2DB;" class="legend">поделки</legend>
     </fieldset>
   </div>
 </div>
 
-
 <div class="pure-g main-set">
+
   <div class="pure-u-1 pure-u-md-14-24 pure-u-lg-14-24 pure-u-xl-14-24 pure-u-xxl-10-24">
     {{ range ( where .Site.RegularPages "Type" "project" | first 1 ) }}
     <div class="post-card-new">
@@ -62,7 +62,7 @@
 
 <div class="pure-g main-set">
   <div class="pure-u-1 pure-u-md-20-24 pure-u-lg-20-24 pure-u-xl-20-24 pure-u-xxl-20-24">
-    <fieldset class="block">
+    <fieldset style="margin-top:15px" class="block">
       <legend style="background-color: #D2DB8A;" class="legend">мануалы</legend>
     </fieldset>
   </div>
