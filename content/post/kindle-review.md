@@ -2,7 +2,7 @@
 Categories = ["оффлайн"]
 Description = "Мой опыт использования Kindle 2022"
 Tags = ["успешная-покупка","оффлайн"]
-date = "2024-11-06T12:01:02+03:00"
+date = "2024-11-08T12:22:50+03:00"
 title = "Год с Kindle"
 Banner = "/img/kindle1.jpg"
 +++
