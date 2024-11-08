@@ -1,7 +1,7 @@
 +++
 Categories = ["network"]
 Description = "Краткий ликбез про протокол IPv6. Основные теоретические сведения"
-Tags = ["ipv6","network"]
+Tags = ["ipv6","network","man"]
 date = "2017-03-31T18:19:02+03:00"
 title = "Введение в протокол IPv6 в сравнении с IPv4"
 Banner = "/img/ipv6.png"

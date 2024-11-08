@@ -2,7 +2,7 @@
 Banner = "/img/net-m7.jpg"
 Categories = ["project"]
 Description = "Нет трассе М-7"
-Tags = ["оффлайн"]
+Tags = [""]
 date = "2023-08-15T00:26:06+03:00"
 title = "Нет трассе М-7"
 

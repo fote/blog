@@ -1,7 +1,7 @@
 +++
 Categories = ["server"]
 Description = "Инструкция как запустить Selenium в Docker"
-Tags = ["server","linux","selenium"]
+Tags = ["server","linux","selenium","man"]
 date = "2020-01-09T17:15:14+03:00"
 title = "Поднимаем Selenium в Docker за 2 минуты"
 Banner = "/img/selenium-docker.png"

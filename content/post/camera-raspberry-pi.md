@@ -1,7 +1,7 @@
 +++
 Categories = ["linux"]
 Description = "Как подключить камеру к Raspberry Pi Zero W"
-Tags = ["raspberry_pi"]
+Tags = ["raspberry_pi","man"]
 date = "2018-02-20T16:32:44+03:00"
 title = "Подключение камеры к Raspberry Pi Zero W"
 Banner = "/img/rpi_camera_0.jpg"

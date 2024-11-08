@@ -1,7 +1,7 @@
 +++
 Categories = ["server","linux","raid"]
 Description = "Как собрать software raid 1 в ubuntu"
-Tags = ["server","raid","linux"]
+Tags = ["server","raid","linux","man"]
 date = "2017-10-10T00:49:06+03:00"
 title = "Создание программного RAID 1 зеркала в Ubuntu"
 Banner = "/img/linux-raid.jpg"

@@ -2,7 +2,7 @@
 Banner = "/img/systemd_unit_file.png"
 Categories = ["server"]
 Description = "Пример unit-файла для автазапуска демона с помощью systemd"
-Tags = ["server","linux","systemd"]
+Tags = ["server","linux","systemd","man"]
 date = "2017-05-29T14:43:10+03:00"
 title = "Как написать systemd unit-файл для автозагрузки своего сервиса"
 

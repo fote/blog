@@ -1,7 +1,7 @@
 +++
 Categories = ["linux"]
 Description = "Некоторые советы при работе в bash"
-Tags = ["bash"]
+Tags = ["bash","man"]
 date = "2014-02-04 15:31:18 +0400"
 title = "Полезные советы bash"
 Banner = "/img/terminal.jpg"

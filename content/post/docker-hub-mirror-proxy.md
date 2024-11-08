@@ -2,7 +2,7 @@
 +++
 Categories = ["server"]
 Description = "Обход блокировки hub.docker.com на скачивание образов из России"
-Tags = ["server"]
+Tags = ["server","man"]
 date = "2024-05-30T23:42:42+03:00"
 title = "Собственное зеркало Docker Hub"
 Banner = "/img/docker-registry.jpg"

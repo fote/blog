@@ -1,7 +1,7 @@
 +++
 Categories = ["linux"]
 Description = "Вечное кэширование у java-резолвера"
-Tags = ["java","linux","server"]
+Tags = ["java","linux","server","man"]
 date = "2016-11-30T19:55:29+03:00"
 title = "Вечный кэш у DNS резолвера в Java"
 Banner = "/img/terminal.jpg"

@@ -4,7 +4,7 @@ defaultContentLanguage = 'ru'
 title = "4te.me"
 theme = "purehugo"
 disqusShortname = "4te"
-Paginate = 20
+Paginate = 21
 enableemoji = true
 pygmentsstyle = "default"
 pygmentsuseclasses = true
@@ -31,8 +31,8 @@ pattern = "2006"
 
 [params]
  subtitle = "Любую проблему можно решить bash-однострочником"
- description = "Блог про linux и окололинуксовые темы"
- author = "Roman Orlov"
+ description = "Блог Романа Орлова"
+ author = "Роман Орлов"
  hideShareOptions = true
 
 

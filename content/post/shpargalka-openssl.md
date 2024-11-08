@@ -1,7 +1,7 @@
 +++
 Categories = ["server"]
 Description = "Список основных команд OpenSSL для использования в быту"
-Tags = ["server", "cheatsheet"]
+Tags = ["server", "cheatsheet","man"]
 date = "2023-10-31T14:21:14+03:00"
 title = "Шпаргалка OpenSSL"
 Banner = "/img/shpargalka-openssl.jpg"

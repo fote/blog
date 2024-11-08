@@ -1,7 +1,7 @@
 +++
 Categories = ["android"]
 Description = "Инструкция как получить root права на Android 8.0 Oreo"
-Tags = ["android"]
+Tags = ["android","man"]
 date = "2019-02-22T15:55:42+03:00"
 title = "Как получить root-права на Adnroid"
 Banner = "/img/rootoneplus.jpg"

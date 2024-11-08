@@ -1,7 +1,7 @@
 +++
 Categories = ["linux"]
 Description = "How-to про расширение LVM раздела"
-Tags = ["lvm","linux","server"]
+Tags = ["lvm","linux","server","man"]
 date = "2016-08-09T12:56:02+03:00"
 title = "Как расширить LVM раздел"
 Banner = "/img/lvm.png"

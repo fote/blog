@@ -1,52 +1,94 @@
 {{ partial "header.html" . }}
 {{ partial "topbar.html" . }}
 
-<div class="pure-g">
-    <div class="pure-u-1 pure-u-md-1-12 pure-u-xl-1-5 pure-u-xxl-1-5"></div>
-    <div class="pure-u-1 pure-u-md-4-5 pure-u-xl-3-5 pure-u-xxl-2-5">
-        <div>
-            <!-- A wrapper for all the blog posts -->
-            <div class="posts">
-                {{ range .Paginator.Pages }}
-                <section class="post">
-                    <header class="post-header">
-
-                        <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
-
-                        <p class="post-meta">
-                            <p class="content-subhead">{{ .Date | time.Format ":date_medium" }}
-                            {{ with .Params.author }}
-                                By <strong class="post-author">{{ . }}</strong>
-                            {{ end }}
-                            {{ if isset .Params "categories" }}
-
-                                {{ $baseUrl := .Site.BaseURL }}
-                                <span class="taglist">
-                                 {{ range .Params.tags }}
-                                   <a href="/tags/{{ . | urlize }}/">{{ . }}</a>
-                                 {{ end }}
-                                 </span> 
-                            {{ end }}
-                        </p>
-                    </header>
-
-                    <div class="post-description">
-                    <a href="{{ .RelPermalink }}"><img src="{{ .Params.Banner }}" class="suggest-pic" /></a>
-                        {{ .Summary }}
-                    </div>
-                    {{ if .Truncated }}
-                    <!-- <div class="read-more-link">
-                      <a href="{{ .RelPermalink }}">Прочитать..</a>
-                    </div> -->
-                    {{ end }}
-                </section>
-                {{ end }}
-            </div>
-            {{ partial "pagination.html" . }}
-            {{ partial "footer.html" . }}
-        </div>
-    </div>
+<div class="pure-g main-set">
+  <div class="pure-u-1 pure-u-md-17-24 pure-u-lg-15-24 pure-u-xl-12-24 pure-u-xxl-10-24">
+    <fieldset style="margin-top:10px" class="block">
+      <legend style="background-color: #DB908A;" class="legend">оффлайн</legend>
+    </fieldset>
+  </div>
 </div>
+
+<div class="pure-g main-set">
+  {{ range first 2 ( where .Paginator.Pages ".Params.tags" "intersect" (slice "оффлайн") ) }}
+  <div class="pure-u-1 pure-u-md-7-24 pure-u-lg-7-24 pure-u-xl-7-24 pure-u-xxl-7-24">
+    <div class="post-card-new">
+      <a href="{{ .Permalink }}" style="position:absolute;top:0px;left:0px;width:100%;height:100%;display:inline;"></a>
+      <img src="{{ .Params.Banner }}" class="suggest-pic-main">
+      <a href="{{ .Permalink }}" class="post-title-main" style="text-decoration: none;">{{ .Title }}</a>
+      {{ .Summary }}
+
+     <div class="taglist-main">
+      {{ range .Params.tags }}
+        <a href="/tags/{{ . | urlize }}/">{{ . }}</a>
+      {{ end }}
+      </div> 
+  </div>
+  </div>
+  {{ end }}
+</div>
+
+
+
+<div class="pure-g main-set">
+  <div class="pure-u-1 pure-u-md-17-24 pure-u-lg-15-24 pure-u-xl-12-24 pure-u-xxl-10-24">
+    <fieldset class="block">
+      <legend style="background-color: #8AB2DB;" class="legend">проекты</legend>
+    </fieldset>
+  </div>
+</div>
+
+
+<div class="pure-g main-set">
+  <div class="pure-u-1 pure-u-md-14-24 pure-u-lg-14-24 pure-u-xl-14-24 pure-u-xxl-10-24">
+    {{ range ( where .Site.RegularPages "Type" "project" | first 1 ) }}
+    <div class="post-card-new">
+      <a href="{{ .Permalink }}" style="position:absolute;top:0px;left:0px;width:100%;height:100%;display:inline;"></a>
+      <img src="{{ .Params.Banner }}" class="suggest-pic-main">
+      <a href="{{ .Permalink }}" class="post-title-main" style="text-decoration: none;">{{ .Title }}</a>
+      {{ .Summary }}
+
+     <div class="taglist-main">
+      {{ range .Params.tags }}
+        <a href="/tags/{{ . | urlize }}/">{{ . }}</a>
+      {{ end }}
+      </div> 
+  </div>
+    {{ end }}
+  </div>
+</div>
+
+
+
+<div class="pure-g main-set">
+  <div class="pure-u-1 pure-u-md-20-24 pure-u-lg-20-24 pure-u-xl-20-24 pure-u-xxl-20-24">
+    <fieldset class="block">
+      <legend style="background-color: #D2DB8A;" class="legend">мануалы</legend>
+    </fieldset>
+  </div>
+</div>
+
+
+<div class="pure-g main-set">
+  {{ range where .Paginator.Pages ".Params.tags" "intersect" (slice "man")}}
+    <div class="pure-u-1 pure-u-md-5-12 pure-u-lg-10-24 pure-u-xl-10-24 pure-u-xxl-7-24">
+            <div class="post-card-new">
+                <a href="{{ .Permalink }}" style="position:absolute;top:0px;left:0px;width:100%;height:100%;display:inline;"></a>
+                <img src="{{ .Params.Banner }}" class="suggest-pic-main">
+                <a href="{{ .Permalink }}" class="post-title-main" style="text-decoration: none;">{{ .Title }}</a>
+                {{ .Summary }}
+
+               <div class="taglist-main">
+                {{ range .Params.tags }}
+                  <a href="/tags/{{ . | urlize }}/">{{ . }}</a>
+                {{ end }}
+                </div> 
+            </div>
+    </div>
+    {{ end }}
+</div>
+{{ partial "pagination.html" . }}
+{{ partial "footer.html" . }}
 
 </body>
 </html>

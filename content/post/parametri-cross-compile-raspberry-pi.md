@@ -1,7 +1,7 @@
 +++
 Categories = ["linux"]
 Description = "Параметры кросс-компиляции Golang для Raspberry Pi"
-Tags = ["golang","raspberry_pi"]
+Tags = ["golang","raspberry_pi","man"]
 date = "2017-02-16T23:31:44+03:00"
 title = "Параметры кросс-компиляции Golang для Raspberry Pi"
 Banner = "/img/rpigolang.png"

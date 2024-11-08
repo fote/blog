@@ -1,7 +1,7 @@
 +++
 Categories = ["desktop", "linux"]
 Description = "Драйвер для RTL8811CU RTL8821CU RTL8731AU 0bda:c811"
-Tags = ["linux", "desktop"]
+Tags = ["linux", "desktop","man"]
 date = "2022-11-30T01:40:42+03:00"
 title = "Установка Wi-Fi драйвера Realtek в Linux"
 Banner = "/img/rt8821_2.png"

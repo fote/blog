@@ -1,7 +1,7 @@
 +++
 Categories = ["linux"]
 Description = "Как установить Raspbian на Raspberry Pi Zero W и настроить Wi-Fi с помощью wpa_supplicant"
-Tags = ["raspberry_pi"]
+Tags = ["raspberry_pi","man"]
 date = "2017-10-27T01:15:44+03:00"
 title = "Обзор и начальная установка Raspberry Pi Zero W"
 Banner = "/img/rpi_zero_w_1.jpg"

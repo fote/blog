@@ -1,7 +1,7 @@
 +++
 Categories = ["server"]
 Description = "Мануал по переносу базы MySQL без даунтайма"
-Tags = ["mysql","linux"]
+Tags = ["mysql","linux","man"]
 date = "2018-01-24T18:15:24+03:00"
 title = "Как перенести базу MySQL на новый сервер без даунтайма"
 Banner = "/img/perenos_mysql_0.png"

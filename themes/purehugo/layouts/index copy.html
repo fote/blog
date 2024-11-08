@@ -1,0 +1,84 @@
+{{ partial "header.html" . }}
+{{ partial "topbar.html" . }}
+
+<div class="pure-g">
+    <div class="pure-u-1 pure-u-md-1-24 pure-u-xl-1-24 pure-u-xxl-1-24"></div>
+
+    <div class="pure-u-1 pure-u-md-22-24 pure-u-xl-22-24 pure-u-xxl-22-24">
+        {{ range ( where .Site.RegularPages "Type" "project" | first 1 ) }}
+                    <fieldset class="posts-top">
+                        <legend class="legend">&nbsp;/проекты&nbsp;</legend>
+                        <section class="post">
+                            <div class="post-description">
+                                <a href="{{ .RelPermalink }}"><img src="{{ .Params.Banner }}" class="suggest-pic" /></a>
+                                </div>
+                            <header class="post-header">
+                                <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+                            </header>
+                        </section>
+                    </fieldset>
+        {{end}}
+    </div>
+    <div class="pure-u-1 pure-u-md-1-24 pure-u-xl-1-24 pure-u-xxl-1-24"></div>
+
+    <div class="pure-u-1 pure-u-md-1-24 pure-u-xl-1-24 pure-u-xxl-1-24"></div>
+    <div class="pure-u-1 pure-u-md-22-24 pure-u-xl-22-24 pure-u-xxl-22-24">
+        {{ range ( where .Site.RegularPages "Type" "post" | first 1 ) }}
+                    <fieldset class="posts-top">
+                        <legend class="legend">&nbsp;/оффлайн&nbsp;</legend>
+                        <section class="post">
+                            <div class="post-description">
+                                <a href="{{ .RelPermalink }}"><img src="{{ .Params.Banner }}" class="suggest-pic" /></a>
+                                </div>
+                            <header class="post-header">
+                                <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+                            </header>
+                        </section>
+                    </fieldset>
+        {{end}}
+    </div>
+    <div class="pure-u-1 pure-u-md-1-24 pure-u-xl-1-24 pure-u-xxl-1-24"></div>
+
+
+    
+    <div class="pure-u-1 pure-u-md-1-24 pure-u-xl-1-24 pure-u-xxl-1-24"></div>
+    {{ range .Paginator.Pages }}
+    <div class="pure-u-1 pure-u-md-11-24 pure-u-xl-11-24 pure-u-xxl-11-24">
+        <div>
+            <!-- A wrapper for all the blog posts -->
+            <div class="posts">
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+
+                        <p class="post-meta">
+                            <p class="content-subhead">{{ .Date | time.Format ":date_medium" }}
+                                {{ $baseUrl := .Site.BaseURL }}
+                                <span class="taglist">
+                                 {{ range .Params.tags }}
+                                   <a href="/tags/{{ . | urlize }}/">{{ . }}</a>
+                                 {{ end }}
+                                 </span> 
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                    <a href="{{ .RelPermalink }}"><img src="{{ .Params.Banner }}" class="suggest-pic" /></a>
+                        {{ .Summary }}
+                    </div>
+                </section>
+               
+            </div>
+
+        </div>
+    </div>
+    {{ end }}
+    <div class="pure-u-1 pure-u-md-1-24 pure-u-xl-1-24 pure-u-xxl-1-24"></div>
+
+</div>
+{{ partial "pagination.html" . }}
+{{ partial "footer.html" . }}
+
+</body>
+</html>
