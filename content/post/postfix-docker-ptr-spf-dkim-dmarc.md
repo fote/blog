@@ -1,7 +1,7 @@
 +++
-Categories = ["server"]
+Categories = ["man"]
 Description = "Мануал как установить Postfix MTA с нуля в docker-контейнере и настроить DKIM PTR SPF DMARC чтобы не попадать в спам"
-Tags = ["postfix","linux","server","docker","man"]
+Tags = ["postfix","linux","server","docker"]
 date = "2018-07-09T19:33:24+03:00"
 title = "Запускаем Postfix в Docker-контейнере и настраиваем PTR, SPF, DKIM и DMARC"
 Banner = "/img/postfix_3.png"

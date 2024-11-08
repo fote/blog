@@ -1,7 +1,7 @@
 +++
-Categories = ["server"]
+Categories = ["man"]
 Description = "Инструкция как установить zfs и собрать массив аналогичный raid0 raid1 raid10"
-Tags = ["linux", "server", "hardware","man"]
+Tags = ["linux", "server", "hardware"]
 date = "2019-01-14T16:35:42+03:00"
 title = "Установка и создание пулов ZFS аналогичных RAID в Ubuntu"
 Banner = "/img/zfs.png"

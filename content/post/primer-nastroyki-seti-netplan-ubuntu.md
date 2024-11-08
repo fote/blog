@@ -1,7 +1,7 @@
 +++
-Categories = ["linux"]
+Categories = ["man"]
 Description = "Пример конфига для netplan"
-Tags = ["server","linux","man"]
+Tags = ["server","linux"]
 date = "2020-04-24T12:00:02+03:00"
 title = "Пример настройки сети с помощью netplan в Ubuntu 18.04"
 Banner = "/img/netplan.png"

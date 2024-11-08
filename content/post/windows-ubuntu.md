@@ -1,7 +1,7 @@
 +++
-Categories = ["linux"]
+Categories = ["man"]
 Description = "Как включить linux подсистему в windows 10"
-Tags = ["desktop","windows","linux","man"]
+Tags = ["desktop","windows","linux"]
 date = "2019-01-13T22:50:02+03:00"
 title = "Как включить подсистему Linux в Windows 10"
 Banner = "/img/windows-linux0.jpg"

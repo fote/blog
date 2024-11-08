@@ -1,7 +1,7 @@
 +++
-Categories = ["linux"]
+Categories = ["man"]
 Description = "Обход ограничения раздачи интернета через мобильную точку доступа на android-телефоне"
-Tags = ["android","man"]
+Tags = ["android"]
 date = "2019-02-25T14:45:14+03:00"
 title = "Фиксация TTL на Android для обхода ограничений на раздачу интернета"
 Banner = "/img/androidfixttl.jpg"

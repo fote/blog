@@ -1,7 +1,7 @@
 +++
-Categories = ["linux", "self-hosted"]
+Categories = ["man"]
 Description = "Домашний стриминговый сервис с помощью Jellyfin"
-Tags = ["linux", "self-hosted","man"]
+Tags = ["linux", "self-hosted"]
 date = "2024-01-14T22:04:02+03:00"
 title = "Домашний стриминговый сервис с помощью Jellyfin"
 Banner = "/img/jellyfin.jpg"

@@ -1,7 +1,7 @@
 +++
-Categories = ["server"]
+Categories = ["man"]
 Description = "How-to: настройка OpenVPN-сервера с двухфакторной аутентификацией"
-Tags = ["vpn","linux","server","docker","man"]
+Tags = ["vpn","linux","server","docker"]
 date = "2023-01-23T02:25:24+03:00"
 title = "OpenVPN и двухфакторная аутентификация"
 Banner = "/img/openvpn-2fa.png"

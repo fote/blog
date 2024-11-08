@@ -1,7 +1,7 @@
 +++
-Categories = ["desktop"]
+Categories = ["man"]
 Description = "Как вернуть флаги в MacOS 12.4 Monterey и 13.0 Ventura"
-Tags = ["macos", "desktop","man"]
+Tags = ["macos", "desktop"]
 date = "2022-11-01T14:40:42+03:00"
 title = "Возвращаем флаги раскладок клавиатуры в трей MacOS"
 Banner = "/img/flags-macos-ventura.png"

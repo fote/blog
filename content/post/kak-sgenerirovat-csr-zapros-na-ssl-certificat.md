@@ -1,7 +1,7 @@
 +++
-Categories = ["linux"]
+Categories = ["man"]
 Description = "Небольшой how-to про генерацию csr для получения ssl сертификата"
-Tags = ["web","ssl","man"]
+Tags = ["web","ssl"]
 date = "2016-08-05T19:08:25+03:00"
 title = "Как сгенерировать CSR заявку на получение SSL сертификата"
 Banner = "/img/ssl-csr.png"

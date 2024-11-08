@@ -1,7 +1,7 @@
 +++
-Categories = ["golang"]
+Categories = ["man"]
 Description = "Как написать telegram бота на golang. Простой пример Telegram bot-а на языке Go с использованием Telegram API"
-Tags = ["golang","man"]
+Tags = ["golang"]
 date = "2017-05-25T21:05:17+03:00"
 title = "Как написать Telegram бота на Golang"
 Banner = "/img/telegram_bot_golang.png"

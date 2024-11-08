@@ -1,7 +1,7 @@
 +++
-Categories = ["server"]
+Categories = ["man"]
 Description = "Продолжение истории про домашний NAS сервер. Как я заменил Seafile на Nextcloud"
-Tags = ["server", "linux", "self-hosted","man"]
+Tags = ["server", "linux", "self-hosted"]
 date = "2022-06-06T22:22:14+03:00"
 title = "Бесшумный NAS для дома и собственное файловое облако на Linux. Часть 2"
 Banner = "/img/nas2-qnap.jpg"

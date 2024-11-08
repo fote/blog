@@ -1,7 +1,7 @@
 +++
-Categories = ["server"]
+Categories = ["man"]
 Description = "Как я собрал бесшумный NAS сервер для дома на Linux и QNAP. И заменил Google Drive и Яндекс.Диск на свое облако"
-Tags = ["linux","server", "self-hosted","man"]
+Tags = ["linux","server", "self-hosted"]
 date = "2019-07-21T13:55:42+03:00"
 title = "Бесшумный NAS для дома и собственное файловое облако на Linux. Часть 1"
 Banner = "/img/nas10.jpg"

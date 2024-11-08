@@ -10,7 +10,7 @@
 </div>
 
 <div class="pure-g main-set">
-  {{ range first 2 ( where .Paginator.Pages ".Params.tags" "intersect" (slice "оффлайн") ) }}
+  {{ range first 2 ( where .Site.RegularPages ".Params.tags" "intersect" (slice "оффлайн") ) }}
   <div class="pure-u-1 pure-u-md-7-24 pure-u-lg-7-24 pure-u-xl-7-24 pure-u-xxl-7-24">
     <div class="post-card-new">
       <a href="{{ .Permalink }}" style="position:absolute;top:0px;left:0px;width:100%;height:100%;display:inline;"></a>
@@ -70,7 +70,7 @@
 
 
 <div class="pure-g main-set">
-  {{ range where .Paginator.Pages ".Params.tags" "intersect" (slice "man")}}
+  {{ range where .Paginator.Pages ".Params.categories" "intersect" (slice "man")}}
     <div class="pure-u-1 pure-u-md-5-12 pure-u-lg-10-24 pure-u-xl-10-24 pure-u-xxl-7-24">
             <div class="post-card-new">
                 <a href="{{ .Permalink }}" style="position:absolute;top:0px;left:0px;width:100%;height:100%;display:inline;"></a>

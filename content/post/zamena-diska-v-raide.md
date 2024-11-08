@@ -1,7 +1,7 @@
 +++
-Categories = ["server"]
+Categories = ["man"]
 Description = "Как заменить диск в софтовом RAID массиве в linux"
-Tags = ["raid", "linux", "server", "hardware","man"]
+Tags = ["raid", "linux", "server", "hardware"]
 date = "2016-10-12T12:56:42+03:00"
 title = "Замена диска в RAID-е"
 Banner = "/img/zamena_diska_v_raid.png"

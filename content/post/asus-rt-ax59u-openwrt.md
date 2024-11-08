@@ -1,7 +1,7 @@
 +++
-Categories = ["server"]
+Categories = ["man"]
 Description = "Как я прошил роутер Asus RT-AX59U на OpenWRT"
-Tags = ["network","linux","server","self-hosted","man"]
+Tags = ["network","linux","server","self-hosted"]
 date = "2024-10-15 13:20:21 +0400"
 title = "Прошивка Asus RT-AX59U на OpenWRT"
 Banner = "/img/asus-rt.jpg"

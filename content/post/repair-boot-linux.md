@@ -1,7 +1,7 @@
 +++
-Categories = ["linux"]
+Categories = ["man"]
 Description = "Самый быстрый способ восстановить GRUB загрузчик на примере Ubuntu 18.04"
-Tags = ["desktop","windows","linux","man"]
+Tags = ["desktop","windows","linux"]
 date = "2019-07-23T23:30:02+03:00"
 title = "Быстрый и простой способ восстановить загрузчик Linux"
 Banner = "/img/repair-boot5.jpg"

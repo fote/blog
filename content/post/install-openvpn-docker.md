@@ -1,7 +1,7 @@
 +++
-Categories = ["server"]
+Categories = ["man"]
 Description = "Быстрый способ установить и настроить OpenVPN сервер на Ubuntu Linux"
-Tags = ["server", "vpn","man"]
+Tags = ["server", "vpn"]
 date = "2022-05-31T00:47:42+03:00"
 title = "Установка и настройка OpenVPN сервера с помощью Docker"
 Banner = "/img/openvpn-docker-install.png"

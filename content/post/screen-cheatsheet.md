@@ -1,7 +1,7 @@
 +++
-Categories = ["linux"]
+Categories = ["man"]
 Description = "Шпаргалка по работе со screen-ом"
-Tags = ["bash", "cheatsheet","man"]
+Tags = ["bash", "cheatsheet"]
 date = "2014-06-03 15:00:12 +0400"
 title = "Шпаргалка по screen-у"
 Banner = "/img/terminal.jpg"
