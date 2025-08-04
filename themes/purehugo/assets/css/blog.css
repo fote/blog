@@ -127,6 +127,9 @@ h3 {
     padding: 0.4em 0;
     font-size: 90%;
     font-weight: 400;
+    letter-spacing: 0.01em;
+    font-family: 'IBM Plex Mono';
+    word-spacing: -0.3em;
 }
 
 .content {
@@ -482,7 +485,10 @@ h3.post-title {
 .date-list {
   color: #828282;
   font-weight: 400;
-  font-size: 0.9em;
+  letter-spacing: 0.01em;
+  font-size: 0.7em;
+  font-family: 'IBM Plex Mono';
+  word-spacing: -0.3em;
 }
 
 .project {
@@ -639,4 +645,13 @@ img[src$='#floatright']
     border-left: 0;
     border-right: 0;
     border-bottom: 0;
+}
+
+.logo {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.85);
+    transition: text-shadow 0.3s ease;
+}
+
+.logo:hover {
+    text-shadow: 0 0 20px rgba(128, 0, 255, 0.85);
 }
