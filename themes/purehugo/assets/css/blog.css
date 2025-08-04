@@ -648,10 +648,10 @@ img[src$='#floatright']
 }
 
 .logo {
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 7px rgba(255, 255, 255, 0.45);
     transition: text-shadow 0.3s ease;
 }
 
 .logo:hover {
-    text-shadow: 0 0 8px rgba(128, 0, 255, 0.5);
+    text-shadow: 0 0 7px rgba(128, 0, 255, 0.45);
 }
